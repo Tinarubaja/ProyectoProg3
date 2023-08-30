@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Music</title>
+    <link rel="shortcut icon" href="./img/logoimg.png"> 
+</head>
+
+<body>
+<!-----------------------HEADER-------------------------->
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html"><h2 class="logotexto">Zalin Music</h2></a>
+        </div>
+
+        <input type="checkbox" id="toggler" >
+        <label for="toggler"><i class="fa-solid fa-bars "></i></label>
+        
+        <div class="menu"> <!--Cambiar div por section-->
+            <ul class="list">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="#artist">ARTIST</a></li>
+                <li><a href="#album">ALBUMS</a></li>
+                <li><a href="#cancion">SONGS</a></li>
+                <li><a href="generos.html">GENEROS</a></li>
+                <li><a href="playlist.html">PLAYLIST</a></li>
+                <li> 
+                    <form method="get" action="search-results.html">
+                        <input class="busqueda" type="search" name ="q" placeholder="Buscar">
+                        <button><i class="fa-solid fe-search"></i></button> <!--Agregamos un boton-->
+                    </form>
+                </li>
+            </ul>
+        </div>
+        
+    </header>
+
+
+<!-----------------------TITULO PRINCIPAL-------------------------->
+
+    <section class="tituloprincipalyfoto">
+        <div class="tituloprincipal">
+            <h1>Let's explore the <br>world of <span class="music">Music!</span></h1>
+        </div>
+    </section>
+ 
+
+
+<!-----------------------ARTISTAS-------------------------->
+
+    <section class="artistasgeneral" id="artist">
+        <h2 class="titulosindex">Artist</h2>
+
+        <div class="artistas">
+          
+            <!-----------------------ACA VAN LOS ARTISTAS API-------------------------->
+
+
+
+
+        </div>
+    </section>
+
+<!-----------------------ALBUMS-------------------------->
+
+    <section class="albumsgeneral" id="album">
+        <h2 class="titulosindex">Albums</h2>
+
+        <div class="albums">
+            
+            <!-----------------------ACA VAN LOS albunes API-------------------------->
+
+
+            
+        </div>
+    </section>
+
+<!-----------------------CANCIONES-------------------------->
+
+    <article class="canciones" id="cancion">
+
+        <h2 class="titulocancion">Songs!</h2>
+            <div class="contenedorcanciones">
+            
+        </div>
+          
+    </article>
+    
+
+<!-----------------------FOOTER-------------------------->
+    
+    <footer>
+        <div class="contenedorfooter">
+            <div class="develop">
+                <i class="fa-solid fa-code"></i>
+                <h3> Developed by</h3>
+            </div>
+            <div class="integrantes">
+                <h3>Ailin Fernandez</h3>
+                <i class="fa-solid fa-minus"></i>
+                <h3>Zoe Adi Sanchez</h3>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="./js/index.js"></script>
+    <script src="./js/validando-formularios.js"></script>
+
+</body>
+</html>
