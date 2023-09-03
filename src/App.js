@@ -5,7 +5,7 @@ import Generos from "./components/Canciones/Generos";
 import Playlist from "./components/Canciones/Playlist";
 import Songs from "./components/Canciones/Songs";
 import VerTodas from "./components/Canciones/VerTodas";
-import {Link, Route} from 'react-router-dom'; 15.1 (gzipped:5.9k)
+import {Link, Route, Switch} from 'react-router-dom'; 15.1 (gzipped:5.9k)
 function App() {
   return (
     <section>
@@ -15,7 +15,7 @@ function App() {
       <Link to="/Playlist">Playlist</Link><br/>
       <Link to="/Songs">Songs</Link><br/>
       <Link to="/VerTodas">Ver Todas</Link><br/>
-      
+      <Switch>
       <Route exact path="/">
         <Home></Home>
       </Route>
@@ -24,7 +24,8 @@ function App() {
       <Route path ="/Playlist" component={Playlist}/>
       <Route path ="/Songs" component={Songs}/>
       <Route path ="/VerTodas" component={VerTodas}/>
-      
+      <Route component={Error404}></Route>
+      </Switch>
     </section>
   );
 }
