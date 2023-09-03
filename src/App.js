@@ -5,26 +5,27 @@ import Generos from "./components/Canciones/Generos";
 import Playlist from "./components/Canciones/Playlist";
 import Songs from "./components/Canciones/Songs";
 import VerTodas from "./components/Canciones/VerTodas";
-import {Link, Route, Switch} from 'react-router-dom'; 15.1 (gzipped:5.9k)
+import {Link, Route, Switch} from 'react-router-dom'; 15.1K (gzipped: 5.9K)
 function App() {
   return (
     <section>
-      <Link to="/">Home</Link><br/>
-      <Link to="/Artist">Artist</Link><br/>
-      <Link to="/Generos">Gneros</Link><br/>
-      <Link to="/Playlist">Playlist</Link><br/>
-      <Link to="/Songs">Songs</Link><br/>
-      <Link to="/VerTodas">Ver Todas</Link><br/>
+      <Link to="/">Home</Link>
+      <Link to="/Artist">Artist</Link>
+      <Link to="/Generos">Generos</Link>
+      <Link to="/Playlist">Playlist</Link>
+      <Link to="/Songs">Songs</Link>
+      <Link to="/VerTodas">Ver Todas</Link>
       <Switch>
       <Route exact path="/">
         <Home></Home>
       </Route>
       <Route path ="/Artist" component={Artist}/>
+      <Route path="/Albums" component={Albums}/>
       <Route path ="/Generos" component={Generos}/>
       <Route path ="/Playlist" component={Playlist}/>
       <Route path ="/Songs" component={Songs}/>
       <Route path ="/VerTodas" component={VerTodas}/>
-      <Route component={Error404}></Route>
+      <Route component={NoExiste}></Route>
       </Switch>
     </section>
   );
