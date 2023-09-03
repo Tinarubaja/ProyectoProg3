@@ -5,7 +5,8 @@ import Generos from "./components/Canciones/Generos";
 import Playlist from "./components/Canciones/Playlist";
 import Songs from "./components/Canciones/Songs";
 import VerTodas from "./components/Canciones/VerTodas";
-import {Link, Route, Switch} from 'react-router-dom'; 15.1K (gzipped: 5.9K)
+import NoExiste from "./components/Canciones/NoExiste";
+import {Link, Route, Switch} from 'react-router-dom';
 function App() {
   return (
     <section>
