@@ -1,4 +1,5 @@
-import Home from "./components/Canciones/Canciones";
+import Home from "./components/Canciones";
+
 
 function App() {
   return (
