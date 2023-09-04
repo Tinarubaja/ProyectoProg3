@@ -1,3 +1,5 @@
+import React from "react";
+import Header from "./components/Canciones/Header";
 import Home from "./components/Canciones/Index";
 import Albums from "./components/Canciones/Albums";
 import Artist from "./components/Canciones/Artist";
@@ -9,25 +11,23 @@ import NoExiste from "./components/Canciones/NoExiste";
 import {Link, Route, Switch} from 'react-router-dom';
 function App() {
   return (
+
     <section>
-      <Link to="/">Home</Link>
-      <Link to="/Artist">Artist</Link>
-      <Link to="/Generos">Generos</Link>
-      <Link to="/Playlist">Playlist</Link>
-      <Link to="/Songs">Songs</Link>
-      <Link to="/VerTodas">Ver Todas</Link>
+      
+      <Header></Header>
+      
       <Switch>
-      <Route exact path="/">
-        <Home></Home>
-      </Route>
-      <Route path ="/Artist" component={Artist}/>
-      <Route path="/Albums" component={Albums}/>
-      <Route path ="/Generos" component={Generos}/>
-      <Route path ="/Playlist" component={Playlist}/>
-      <Route path ="/Songs" component={Songs}/>
-      <Route path ="/VerTodas" component={VerTodas}/>
-      <Route component={NoExiste}></Route>
-      </Switch>
+        <Route exact path="/" component>
+          <Home></Home>
+        </Route>
+        <Route path ="/Artist" component={Artist}/>
+        <Route path="/Albums" component={Albums}/>
+        <Route path ="/Generos" component={Generos}/>
+        <Route path ="/Playlist" component={Playlist}/>
+        <Route path ="/Songs" component={Songs}/>
+        <Route path ="/VerTodas" component={VerTodas}/>
+        <Route component={NoExiste}></Route>
+        </Switch>
     </section>
   );
 }
