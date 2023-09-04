@@ -8,6 +8,7 @@ import Playlist from "./components/Canciones/Playlist";
 import Songs from "./components/Canciones/Songs";
 import VerTodas from "./components/Canciones/VerTodas";
 import NoExiste from "./components/Canciones/NoExiste";
+import Footer from "./components/Canciones/Footer";
 
 import {Link, Route, Switch} from 'react-router-dom';
 function App() {
@@ -29,6 +30,7 @@ function App() {
         <Route path ="/VerTodas" component={VerTodas}/>
         <Route component={NoExiste}></Route>
         </Switch>
+        <Footer></Footer>
     </section>
   );
 }
