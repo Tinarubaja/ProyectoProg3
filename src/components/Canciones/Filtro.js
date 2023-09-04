@@ -9,23 +9,25 @@ class Filtro extends Component {
 
 controlarEnvio(evento){
     evento.preventDefault();
-    return true
 }
 guardarDatosDelInput(event){
     this.setState({
     valorDelInput: event.target.value
     },
-    ()=> console.log(event)); 
+    ()=> this.props.funcionFiltrar(this.state.ValorDelInput)); 
 }
-}
+
 render(){
     return(
-        <form action ="" onSubmit={(e)=>this.controlarEnvio(e)}>
-            <label htmlFor="">Filtrar por:</label>
-            <input type ="text" name ="filtro" onChange={(e)=> this.guardarDatosDelInput(e)} value = {this.state.ValorDelInput}/>
+        <form action ="" onSubmit={(event)=>this.controlarEnvio(event)}>
+            <label>Filtrar por:</label>
+            <input type ="text" name ="filtro" onChange={(event)=> this.guardarDatosDelInput(event)} value = {this.state.ValorDelInput}/>
             <button type = 'submit'>Filtrar</button>
         </form>
     );
 }
+}
+
+
 
 export default Filtro
