@@ -28,10 +28,17 @@ render(){
     console.log("Me monté");
     console.log(this.state)
     return(
-        <section>
-            <p>Nombre del Personaje: {this.state.elemento.name}</p>
-            
-        </section>
+        <div>
+            <section class="tituloprincipalyfoto">
+            <div class="tituloprincipal">
+                <h1>Let's explore the world of <span class="music">Music!</span></h1>
+            </div>
+            </section>
+            <section> 
+                <p>Nombre del Personaje: {this.state.elemento.name}</p>
+            </section>
+        </div>
+       
     )
 }
 }
