@@ -19,7 +19,9 @@ class Footer extends Component{
             <div class="integrantes">
                 <h3>Ailin Fernandez</h3>
                 <i class="fa-solid fa-minus"></i>
-                <h3>Zoe Adi Sanchez</h3>
+                <h3>Martina Rubaja</h3>
+                <i class="fa-solid fa-minus"></i>
+                <h3>Renata Lamas</h3>
             </div>
         </div>
 
