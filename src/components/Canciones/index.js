@@ -1,26 +1,28 @@
 import React, {Component} from "react";
+import CardAlbum from "../CardAlbum";
 class Home extends Component{
     constructor(){
         super();
         this.state = {
-            elemento:{}
+            albums:[]
+
         }
     }
 
 componentDidMount(){
     console.log("En componentDidMount");
 
-    fetch("https://thingproxy.freeboard.io/fetch/https://api.deezer.com/genre/3")
+    fetch("https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/albums")
     .then(response => response.json())
-    .then( data => this.setState({
-        elemento: data
-    }))
+    .then( data => this.setState(
+        this.state.albums= data.data
+    ))
     .catch(e => console.log(e))
 }
 
 
 componentDidUpdate(){
-    console.log("En componentDidUpdate");
+    console.log(this.state.albums)
 }
 
 
@@ -34,8 +36,17 @@ render(){
                 <h1>Let's explore the world of <span class="music">Music!</span></h1>
             </div>
             </section>
-            <section> 
-                <p>Nombre del Personaje: {this.state.elemento.name}</p>
+
+            <section>
+                {this.state.albums.map((album,idx) => <CardAlbum title = {album.title}/>) }
+                <p>Nombre del Personaje: {this.state.albums.title}</p>
+            </section>
+       
+
+
+            <section class="artistasgeneral" id="artist">
+            <h2 class="titulosindex">Artist</h2>
+
             </section>
         </div>
        

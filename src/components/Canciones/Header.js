@@ -29,6 +29,14 @@ render(){
             <li><Link to="/Playlist">Playlist</Link></li>
             <li><Link to="/Songs">Songs</Link></li>
             <li><Link to="/VerTodas">Ver Todas</Link></li>
+
+            <li>
+                <form method="get" action="search-results.html">
+                    <input class="busqueda" type="search" name ="q" placeholder="Buscar"></input>
+                    <button><i class="fa-solid fe-search"></i></button> 
+                </form>
+            </li>
+
             </ul>
         </div>
     </header>
