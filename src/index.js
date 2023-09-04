@@ -6,12 +6,10 @@ import {BrowserRouter, Link, Route, Switch} from 'react-router-dom'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 //root.render(<App />);
 
-ReactDOM.render(
+root.render(
     <BrowserRouter>
       <App />
     </BrowserRouter>,
-
-    document.getElementById('root')
    );
 
 
