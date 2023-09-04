@@ -29,7 +29,7 @@ function App() {
         <Route path ="/Songs" component={Songs}/>
         <Route path ="/VerTodas" component={VerTodas}/>
         <Route component={NoExiste}></Route>
-        </Switch>
+      </Switch>
         <Footer></Footer>
     </section>
   );

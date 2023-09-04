@@ -12,7 +12,7 @@ render(){
     console.log("Me monté");
     console.log(this.state)
     return(
-
+        <React.Fragment>
     <header class="navbar">
         <div class="logo">
             <a href="index.html"><h2 class="logotexto">TITULO</h2></a>
@@ -32,6 +32,7 @@ render(){
             </ul>
         </div>
     </header>
+    </React.Fragment>
     )
  }
 }
