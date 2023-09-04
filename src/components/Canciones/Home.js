@@ -41,6 +41,7 @@ render(){
                 {this.state.albums.map((album,idx) => <CardAlbum title = {album.title}/>) }
                 <p>Nombre del Personaje: {this.state.albums.title}</p>
             </section>
+            
        
 
 
