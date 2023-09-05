@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./components/Canciones/Header";
-import Home from "./components/Canciones/Index";
+import Home from "./components/Canciones/Home";
 import Albums from "./components/Canciones/Albums";
 import Artist from "./components/Canciones/Artist";
 import Generos from "./components/Canciones/Generos";

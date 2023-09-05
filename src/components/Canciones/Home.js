@@ -45,6 +45,7 @@ render(){
                 <p>Nombre del Album: {this.state.albums.title}</p>
                 <p>Nombre de la cancion: {this.state.canciones.title}</p>
             </section>
+            
        
 
 
