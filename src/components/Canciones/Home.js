@@ -1,10 +1,12 @@
 import React, {Component} from "react";
 import CardAlbum from "../CardAlbum";
+import CardArtista from "./CardArtista";
 class Home extends Component{
     constructor(){
         super();
         this.state = {
-            albums:[]
+            albums:[],
+            artista :[]
 
         }
     }
@@ -12,10 +14,12 @@ class Home extends Component{
 componentDidMount(){
     console.log("En componentDidMount");
 
-    fetch("https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/albums")
+    fetch("https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks&top?limit=10")
     .then(response => response.json())
     .then( data => this.setState(
         this.state.albums= data.data
+    
+    
     ))
     .catch(e => console.log(e))
 }
@@ -38,8 +42,10 @@ render(){
             </section>
 
             <section>
-                <h2>Nombre del album</h2>
+                <h2>Albumes mas populares</h2>
                 {this.state.albums.map((album,idx) => <CardAlbum title = {album.title}/>)}
+                <h2>Artistas del momento</h2>
+                <button type='submit'>Ver Mas</button>
                 
             </section>
             

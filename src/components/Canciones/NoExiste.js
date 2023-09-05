@@ -4,7 +4,7 @@ import React, {Component} from 'react';
 function NoExiste(){
     return(
         <div>
-            <h2>hola soy el componente</h2>
+            <h2>404 Not found</h2>
         </div>
     )
 }

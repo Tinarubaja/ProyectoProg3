@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
-import Albums from './Canciones/Albums';
 
-function CardAlbum(props){
+function CardArtista(props){
     return(
         <div>
             <h2>{props.title}</h2>
@@ -9,4 +8,4 @@ function CardAlbum(props){
     )
 }
 
-export default CardAlbum;
+export default CardArtista;
