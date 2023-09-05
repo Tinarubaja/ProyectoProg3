@@ -4,7 +4,8 @@ class Home extends Component{
     constructor(){
         super();
         this.state = {
-            albums:[]
+            albums:[],
+            canciones:[]
 
         }
     }
@@ -15,7 +16,8 @@ componentDidMount(){
     fetch("https://cors-anywhere.herokuapp.com/https://api.deezer.com/chart/0/albums")
     .then(response => response.json())
     .then( data => this.setState(
-        this.state.albums= data.data
+        this.state.albums= data.data,
+        this.state.canciones= data.data
     ))
     .catch(e => console.log(e))
 }
@@ -38,8 +40,10 @@ render(){
             </section>
 
             <section>
-                {this.state.albums.map((album,idx) => <CardAlbum title = {album.title}/>) }
-                <p>Nombre del Personaje: {this.state.albums.title}</p>
+                {this.state.albums.map((album,idx) => <CardAlbum title = {album.title}/>)}
+                {this.state.canciones.map((cancion,idx)=> <CardAlbum title = {cancion.title}/>)} 
+                <p>Nombre del Album: {this.state.albums.title}</p>
+                <p>Nombre de la cancion: {this.state.canciones.title}</p>
             </section>
        
 
