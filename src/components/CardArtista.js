@@ -1,20 +1,39 @@
 import React, {Component} from 'react';
+class CardArtista extends Component{
+    constructor(props){
+        super(props);
+        this.state={
+            boton:false
+        }
+    }
+    verMas(){
+        this.setState({boton:true})
 
-function CardArtista(props){
-    return(
-        <div class= "cardalbum">
-            <a>
-                <img src={props.picture} alt ="foto"/>
-                <div class="containeralbum">
-                    <h2>{props.name}</h2>
-                </div>
-                <button type='submit'>agregar a favoritos</button>              
-                <button type='submit'>Ver mas</button>              
-                <p><button type='submit'>Ir a detalle</button></p>     
+    }
+    verMenos(){
+        this.setState({boton:false})
+    }
+    render(){
+        return(
+        <article>
+            <h1>{this.props.name}</h1>
+            <img src={this.props.picture}/>
+        {this.state.boton !== false?
+            <section>
+                <button onClick={()=>this.verMenos()}>Ver menos</button>
+                <p>Descripcion</p>
+            </section>
+            :
+            <button onClick= {()=> this.verMas()}> Ver mas</button>
+        }
+    
 
-            </a>
-        </div>
-    )
+
+    
+          
+        </article>
+        )
+    }
+
 }
-
 export default CardArtista;
