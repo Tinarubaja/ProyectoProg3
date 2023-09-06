@@ -17,7 +17,8 @@ componentDidMount(){
     fetch("https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks&top?limit=10")
     .then(response => response.json())
     .then( data => this.setState(
-        this.state.albums= data.data
+        this.state.albums= data.data,
+        this.state.artista= data.artist
     
     
     ))
@@ -27,6 +28,7 @@ componentDidMount(){
 
 componentDidUpdate(){
     console.log(this.state.albums)
+    console.log(this.state.artista)
 }
 
 

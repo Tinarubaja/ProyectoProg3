@@ -5,6 +5,7 @@ function CardAlbum(props){
     return(
         <div>
             <h2>{props.title}</h2>
+            <img src={props.cover} alt ="foto"/>
         </div>
     )
 }
