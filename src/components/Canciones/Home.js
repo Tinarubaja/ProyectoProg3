@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import CardAlbum from "../CardAlbum";
-import CardArtista from "./CardArtista";
+import CardArtista from "../CardArtista";
 class Home extends Component{
     constructor(){
         super();
@@ -14,13 +14,19 @@ class Home extends Component{
 componentDidMount(){
     console.log("En componentDidMount");
 
-    fetch("https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks&top?limit=10")
+    fetch("https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks&top?limit=5")
     .then(response => response.json())
     .then( data => this.setState(
-        this.state.albums= data.data,
-        this.state.artista= data.artist
-    
-    
+        this.state.albums= data.data
+        //this.state.artista= data.artist
+    ))
+    .catch(e => console.log(e))
+
+    fetch("https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/artists&top?limit=5")
+    .then(response => response.json())
+    .then( data => this.setState(
+        this.state.artista= data.data,
+        console.log(data)
     ))
     .catch(e => console.log(e))
 }
@@ -43,21 +49,28 @@ render(){
             </div>
             </section>
 
-            <section>
-                <h2>Albumes mas populares</h2>
-                {this.state.albums.map((album,idx) => <CardAlbum title = {album.title}/>)}
-                <h2>Artistas del momento</h2>
-                <button type='submit'>Ver Mas</button>
-                
-            </section>
-            
-       
+        
+                <section class="albumsgeneral" id="album">
+                    <h2 class="titulosindex">Albums</h2>
+
+                     <div class="albums">
+                        {this.state.albums.map((album,idx) => <CardAlbum title = {album.title} cover={album.album.cover}/>)}
+                        
+                    </div>  
+                    <button type='submit'>Ver Mas</button>              
+                </section>
+
+                <section class="artistasgeneral" id="artist">
+                    <h2 class="titulosindex">Artist</h2>
+
+                    <div class="artistas">
+                    
+                    {this.state.artista.map((artista,idx) => <CardArtista name = {artista.name} picture={artista.picture}/>)}
 
 
-            <section class="artistasgeneral" id="artist">
-            <h2 class="titulosindex">Artist</h2>
+                    </div>
+                </section>
 
-            </section>
         </div>
        
     )
