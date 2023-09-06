@@ -7,8 +7,7 @@ class Home extends Component{
         this.state = {
             albums:[],
             artista :[],
-            boton : false
-
+           // boton : false
         }
     }
 
@@ -37,13 +36,13 @@ componentDidUpdate(){
     console.log(this.state.albums)
     console.log(this.state.artista)
 }
-verMas(){
-    this.setState({ boton:true})
-}
-verMenos(){
-    this.setState({ boton:false})
+//verMas(){
+  //  this.setState({ boton:true})
+//}
+//verMenos(){
+//    this.setState({ boton:false})
    
-}
+//}
 
 render(){
     console.log("Me monté");
