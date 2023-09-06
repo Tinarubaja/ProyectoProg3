@@ -1,21 +1,46 @@
 import React, {Component} from 'react';
-import Albums from './Canciones/Albums';
+class CardAlbum extends Component{
+    constructor(props){
+        super(props);
+        this.state={
+            boton:false
+        }
+    }
+    verMas(){
+        this.setState({boton:true})
 
-function CardAlbum(props){
-    return(
-        <div class= "cardalbum">
-            <a>
-                <img src={props.cover} alt ="foto"/>
-                <div class="containeralbum">
-                    <h2>{props.title}</h2>
-                </div>
-                <button type='submit'>agregar a favoritos</button>              
-                <button type='submit'>Ver mas</button>              
-                <p><button type='submit'>Ir a detalle</button></p>          
+    }
+    verMenos(){
+        this.setState({boton:false})
+    }
+    render(){
+        return(
+        <article>
+            <h1>{this.props.title}</h1>
+            <img src={this.props.cover}/>
+        {this.state.boton !== false?
+            <section>
+                <button onClick={()=>this.verMenos()}>Ver menos</button>
+                <p>Descripcion</p>
+            </section>
+            :
+            <button onClick= {()=> this.verMas()}> Ver mas</button>
+        }
+    
 
-            </a>
-        </div>
-    )
+
+    
+          
+        </article>
+        )
+    }
+
 }
-
 export default CardAlbum;
+
+
+
+        
+
+
+    

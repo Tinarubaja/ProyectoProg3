@@ -6,7 +6,8 @@ class Home extends Component{
         super();
         this.state = {
             albums:[],
-            artista :[]
+            artista :[],
+            boton : false
 
         }
     }
@@ -36,7 +37,13 @@ componentDidUpdate(){
     console.log(this.state.albums)
     console.log(this.state.artista)
 }
-
+verMas(){
+    this.setState({ boton:true})
+}
+verMenos(){
+    this.setState({ boton:false})
+   
+}
 
 render(){
     console.log("Me monté");
@@ -54,10 +61,9 @@ render(){
                     <h2 class="titulosindex">Albums</h2>
 
                      <div class="albums">
-                        {this.state.albums.map((album,idx) => <CardAlbum title = {album.title} cover={album.album.cover}/>)}
+                        {this.state.albums.map((album,idx) => <CardAlbum key={album + idx}title = {album.title} cover={album.album.cover}/>)}
                         
-                    </div>  
-                    <button type='submit'>Ver Mas</button>              
+                    </div>               
                 </section>
 
                 <section class="artistasgeneral" id="artist">
@@ -65,7 +71,7 @@ render(){
 
                     <div class="artistas">
                     
-                    {this.state.artista.map((artista,idx) => <CardArtista name = {artista.name} picture={artista.picture}/>)}
+                    {this.state.artista.map((artista,idx) => <CardArtista key={artista + idx}name = {artista.name} picture={artista.picture}/>)}
 
 
                     </div>
