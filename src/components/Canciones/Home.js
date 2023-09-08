@@ -7,7 +7,9 @@ class Home extends Component{
         this.state = {
             albums:[],
             artista :[],
-            boton : false
+            boton : false,
+            busqueda:undefined,
+            valor: ''
 
         }
     }
@@ -31,7 +33,32 @@ componentDidMount(){
     ))
     .catch(e => console.log(e))
 }
-
+busqueda(){
+    fetch(`https://api.deezer.com/chart/artist&top?=${this.state.valor}`)
+    .then(response => response.json())
+    .then(data => this.setState(
+        {
+            busqueda:data.results,
+        }
+    ))
+    .catch(error => console.log(error))
+}
+evitarSubmit(event){
+    event.preventDefault();
+}
+controlarCambios(event){
+    this.setState({valor:event.target.value},
+        ()=> this.busqueda()
+        )
+}
+render(){
+    return(
+        <form onSubmit={(event)=> this.evitarSubmit(event)}>
+            <label>Buscador</label>
+            <input type='text' onChange={(event)=> this.controlarCambios(event)} value={this.state.valor}/>
+        </form>
+    )
+}
 
 componentDidUpdate(){
     console.log(this.state.albums)

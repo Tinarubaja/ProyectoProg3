@@ -15,7 +15,7 @@ render(){
         <React.Fragment>
     <header class="navbar">
         <div class="logo">
-            <a href="index.html"><h2 class="logotexto">TITULO</h2></a>
+            <a href="index.html"><h2 class="logotexto">R-A-T</h2></a>
         </div>
 
         <input type="checkbox" id="toggler"></input>
