@@ -16,21 +16,17 @@ class CardAlbum extends Component{
     render(){
         return(
         <article>
-            <h1>{this.props.title}</h1>
-            <img src={this.props.cover}/>
-        {this.state.boton !== false?
-            <section>
-                <button onClick={()=>this.verMenos()}>Ver menos</button>
-                <p>Descripcion</p>
-            </section>
-            :
-            <button onClick= {()=> this.verMas()}> Ver mas</button>
-        }
-    
-
-
-    
-          
+                <h1>{this.props.title}</h1>
+                <img src={this.props.cover}/>
+                {this.state.boton !== false?
+                    <section>
+                        <button onClick={()=>this.verMenos()}>Ver menos</button>
+                        <p>Descripcion</p>
+                    </section>
+                    :
+                    <button onClick= {()=> this.verMas()}> Ver mas</button>
+                }
+                         
         </article>
         )
     }
