@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import CardAlbum from "../CardAlbum";
 import CardArtista from "../CardArtista";
+import {Link} from 'react-router-dom';
 class Home extends Component{
     constructor(){
         super();
@@ -67,10 +68,13 @@ render(){
 
                 <section class="artistasgeneral" id="artist">
                     <h2 class="titulosindex">Artist</h2>
+                    
 
                     <div class="artistas">
                     
-                    {this.state.artista.map((artista,idx) => <CardArtista key={artista + idx}name = {artista.name} picture={artista.picture}/>)}
+    
+                    {this.state.artista.map((artista,idx) => <CardArtista key={artista + idx}name = {artista.name} picture={artista.picture}link={artista.id} id= {artista.id} /> )}
+                    
 
 
                     </div>

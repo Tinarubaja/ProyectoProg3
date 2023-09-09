@@ -12,14 +12,14 @@ class Artist extends Component{
     }
 
     componentDidMount(){
-        let canciones1 = []
-        let url = `https://api.deezer.com/artist/${this.state.id}`
+        // let canciones1 = []
+        let url = `https://thingproxy.freeboard.io/fetch/https://api.deezer.com/artist/${this.state.id}`
         fetch(url)
             .then(response => response.json())
-            .then(data => canciones1.push(data))
-            .then(() => this.setState(
+            .then((data) => this.setState(
                 {
-                    canciones:canciones1
+                    canciones:data
+                    
                  }
                     
             ))
@@ -31,7 +31,30 @@ class Artist extends Component{
     render(){
         return(
             <React.Fragment >
-           {this.state.canciones.map((detalleC, idx) => <CardArtista key={detalleC + idx} datosDetalle={detalleC} />)}
+           {/* {this.state.canciones.map((detalleC, idx) => <CardArtista key={detalleC + idx} datosDetalle={detalleC} />)} */}
+           
+            
+                
+                     <section>
+                        <img src={this.state.canciones.picture} />
+                        <h2>{this.state.canciones.name}</h2>
+                        {/* {/* <p>Nombre del disco: {this.state.album.title}</p>
+                        <p>Listado de canciones:</p>
+                        {this.state.album.tracks.data.map((cancion, i) => (
+                            <div key={cancion + i}>
+                                <ul ><li >{cancion.title}</li></ul>
+                            </div> */}
+
+                        
+                        {/*  Agregar a favoritos*/}
+                    </section>
+                
+
+            
+        
+    
+
+
            </React.Fragment>
 
         )

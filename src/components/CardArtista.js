@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 class CardArtista extends Component{
     constructor(props){
         super(props);
@@ -18,6 +19,9 @@ class CardArtista extends Component{
         <article>
             <h1>{this.props.name}</h1>
             <img src={this.props.picture}/>
+            <Link to={`/Artist/${this.props.id}`}>detalle artista</Link>
+            <h1>{this.props.id}</h1>
+            
         {this.state.boton !== false?
             <section>
                 <button onClick={()=>this.verMenos()}>Ver menos</button>
@@ -25,6 +29,7 @@ class CardArtista extends Component{
             </section>
             :
             <button onClick= {()=> this.verMas()}> Ver mas</button>
+
         }
     
 
