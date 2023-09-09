@@ -1,12 +1,12 @@
 import React, {Component} from "react";
 import {Link} from 'react-router-dom';
+import Formulario from "./Formulario";
 class Header extends Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
-        }
+        };
     }
-    
 
 render(){
     console.log("Me monté");
@@ -31,10 +31,7 @@ render(){
             <li><Link to="/VerTodas">Ver Todas</Link></li>
 
             <li>
-                <form method="get" action="search-results.html">
-                    <input class="busqueda" type="search" name ="q" placeholder="Buscar"></input>
-                    <button><i class="fa-solid fe-search"></i></button> 
-                </form>
+                <Formulario></Formulario>
             </li>
 
             </ul>
