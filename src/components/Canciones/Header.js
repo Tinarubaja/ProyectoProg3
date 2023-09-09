@@ -2,8 +2,8 @@ import React, {Component} from "react";
 import {Link} from 'react-router-dom';
 import Formulario from "./Formulario";
 class Header extends Component{
-    constructor(props){
-        super(props);
+    constructor(){
+        super();
         this.state = {
         };
     }
