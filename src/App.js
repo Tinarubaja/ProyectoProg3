@@ -10,6 +10,9 @@ import Songs from "./components/Canciones/Songs";
 import VerTodas from "./components/Canciones/VerTodas";
 import NoExiste from "./components/Canciones/NoExiste";
 import Footer from "./components/Canciones/Footer";
+//import Cancion from "./components/Canciones/Cancion";
+import "./components/styles.css";
+
 
 
 import {Route, Switch} from 'react-router-dom';
@@ -24,7 +27,8 @@ function App() {
         <Route exact path="/" component>
           <Home></Home>
         </Route>
-        <Route path ="/Artist" component={Artist}/>
+        <Route path ="/Artist/:id" component={Artist}/>
+        
         <Route path="/Albums" component={Albums}/>
         <Route path ="/Generos" component={Generos}/>
         <Route path ="/Playlist" component={Playlist}/>

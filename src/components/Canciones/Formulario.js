@@ -1,4 +1,6 @@
 import React, {Component} from "react";
+import {Link} from 'react-router-dom';
+
 class Formulario extends Component{
     constructor(props){
         super(props);
@@ -9,7 +11,7 @@ class Formulario extends Component{
     controlarEnvio(evento){
         evento.preventDefault();
         console.log("No me mandé");
-
+        
     }
     guardarDatosDelInput(eventoEnCampoInput){
         this.setState({
@@ -23,10 +25,10 @@ render(){
     console.log(this.state)
     return(
         <React.Fragment>
-                <form onSubmit={(eventoEnCampoInput)=>this.controlarEnvio(eventoEnCampoInput)}>
-                    <input class="busqueda" type="text" name ="q" placeholder="Buscar"
+                <form action={`/Busqueda/${this.state.formulario}`}>
+                    <input class="busqueda" type="text" placeholder="Buscar"
                     onChange={(eventoEnCampoInput)=>this.guardarDatosDelInput(eventoEnCampoInput)} value={this.state.formulario}></input>
-                    <button  type="submit"> buscar</button> 
+                    <button  type="submit" > buscar</button> 
                 </form>
         </React.Fragment>
 
