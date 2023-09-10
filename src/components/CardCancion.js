@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-class CardArtista extends Component{
+class CardCancion extends Component{
     constructor(props){
         super(props);
         this.state={
@@ -17,10 +17,7 @@ class CardArtista extends Component{
     render(){
         return(
         <article>
-            <h1>{this.props.name}</h1>
-            <img src={this.props.picture}/>
-            <Link to={`/Artist/${this.props.id}`}>detalle artista</Link>
-            <h1>{this.props.id}</h1>
+            <h1>{this.props.title}</h1>
             
         {this.state.boton !== false?
             <section>
@@ -41,4 +38,4 @@ class CardArtista extends Component{
     }
 
 }
-export default CardArtista;
+export default CardCancion;

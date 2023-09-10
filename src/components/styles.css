@@ -103,10 +103,11 @@ footer{
 .tituloprincipalyfoto{
     margin-top: 3%;
     padding: 150px;
-    background-image: url("../img/SoundWave.svg");
+    background-image: url("./SoundWave.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 100px;
+    
 }
 .tituloprincipal{
     font-size: 40px;
@@ -126,7 +127,6 @@ footer{
     font-style: italic;
     font-size: 55px;
 
-
 }
 .artistas{    /* artistas y albums usan los mismos*/
     display:flex;
@@ -134,8 +134,6 @@ footer{
     flex-direction: row;
     justify-content:center;
     align-items: center;
-    
-    
 }
 /*---cards de artistas*/
   .card {
@@ -143,7 +141,6 @@ footer{
     width: 18%;
     border-radius: 5px;
     margin: 30px 50px;
-   
   }
   .card:hover {
     box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.2);
@@ -169,7 +166,6 @@ footer{
     flex-direction: row;
     justify-content:center;
     align-items: center;    
-    
 }
 
 /*---cards de albums*/
@@ -178,7 +174,6 @@ footer{
     width: 13%;
     border-radius: 5px;
     margin: 30px 30px;
-    
   }
   .albums:hover .cardalbum {
     opacity:0.3;
@@ -548,7 +543,7 @@ footer{
     .tituloprincipalyfoto{
         margin-top: 3%;
         padding: 45px;
-        background-image: url("../img/SoundWavemobile.svg");
+        /*background-image: url(".../");*/
         background-repeat: no-repeat;
        
     }

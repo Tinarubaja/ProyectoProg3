@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import CardAlbum from "../CardAlbum";
 import CardArtista from "../CardArtista";
+import {Link} from 'react-router-dom';
+import Footer from "./Footer";
 class Home extends Component{
     constructor(){
         super();
@@ -81,22 +83,38 @@ render(){
             </div>
             </section>
 
+
         
                 <section class="albumsgeneral" id="album">
                     <h2 class="titulosindex">Albums</h2>
 
                      <div class="albums">
-                        {this.state.albums.map((album,idx) => <CardAlbum key={album + idx}title = {album.title} cover={album.album.cover}/>)}
+                        {
+                            this.state.albums.length ===0?
+                            <h3>Cargando...</h3>:(<section>
                         
+                        {this.state.albums.map((album,idx) => <CardAlbum key={album + idx}title = {album.title} cover={album.album.cover}/>)}
+                      ))
+                      </section>)
+}
                     </div>               
                 </section>
 
                 <section class="artistasgeneral" id="artist">
                     <h2 class="titulosindex">Artist</h2>
+                    
 
                     <div class="artistas">
+                        {
+                            this.state.artistas.length ===0 ?
+                            <h3>Cargando...</h3>: (<section>
                     
-                    {this.state.artista.map((artista,idx) => <CardArtista key={artista + idx}name = {artista.name} picture={artista.picture}/>)}
+    
+                    {this.state.artista.map((artista,idx) => <CardArtista key={artista + idx}name = {artista.name} picture={artista.picture}link={artista.id} id= {artista.id} /> )}
+                    ))
+                    </section>)
+}
+                    
 
 
                     </div>
@@ -109,5 +127,5 @@ render(){
 }
 
 
-
+<Footer/>
 export default Home;

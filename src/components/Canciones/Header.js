@@ -1,12 +1,12 @@
 import React, {Component} from "react";
 import {Link} from 'react-router-dom';
+import Formulario from "./Formulario";
 class Header extends Component{
     constructor(){
         super();
         this.state = {
-        }
+        };
     }
-    
 
 render(){
     console.log("Me monté");
@@ -15,7 +15,11 @@ render(){
         <React.Fragment>
     <header class="navbar">
         <div class="logo">
+<<<<<<< HEAD
             <a href="index.html"><h2 class="logotexto">R-A-T</h2></a>
+=======
+            <Link to="/"><h2 class="logotexto">TITULO</h2></Link>
+>>>>>>> 47e9190e4d819317eaf3944707a3803fa5cd3e4c
         </div>
 
         <input type="checkbox" id="toggler"></input>
@@ -31,10 +35,7 @@ render(){
             <li><Link to="/VerTodas">Ver Todas</Link></li>
 
             <li>
-                <form method="get" action="search-results.html">
-                    <input class="busqueda" type="search" name ="q" placeholder="Buscar"></input>
-                    <button><i class="fa-solid fe-search"></i></button> 
-                </form>
+                <Formulario></Formulario>
             </li>
 
             </ul>
