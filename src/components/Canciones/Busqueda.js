@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 //import Formulario from './Formulario';
 import CardAlbum from "../CardAlbum";
-import CardCancion from '../CardCancion';
+import CardCancionHome from '../CardCancionHome';
 
 
 class Busqueda extends Component{
@@ -60,7 +60,7 @@ class Busqueda extends Component{
                 </section>
                 <section>
                     <h2>CANCIONES</h2>
-                    {this.state.canciones.map((cancion,idx) => <CardCancion key={cancion + idx}title = {cancion.title}/>)}
+                    {this.state.canciones.map((cancion,idx) => <CardCancionHome key={cancion + idx}title = {cancion.title} />)}
                 </section>
             </div>
         )

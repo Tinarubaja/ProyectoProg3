@@ -1,27 +1,27 @@
 import React , {Component} from 'react';
 class Filtro extends Component {
-    constructor(props){
-        super(props)
+    constructor(){
+        super()
         this.state = {
             ValorDelInput:''
         }
     }
 
-controlarEnvio(evento){
-    evento.preventDefault();
+controlarEnvio(event){
+    event.preventDefault();
+    return true
 }
-guardarDatosDelInput(event){
+guardarDatosDelInput(eventoEnCampoInput){
     this.setState({
-    valorDelInput: event.target.value
-    },
-    ()=> this.props.funcionFiltrar(this.state.ValorDelInput)); 
+    valorDelInput: eventoEnCampoInput.target.value
+    },()=> console.log(this.state.ValorDelInput)); 
 }
 
 render(){
     return(
-        <form action ="" onSubmit={(event)=>this.controlarEnvio(event)}>
-            <label>Filtrar por:</label>
-            <input type ="text" name ="filtro" onChange={(event)=> this.guardarDatosDelInput(event)} value = {this.state.ValorDelInput}/>
+        <form action=" " onSubmit={(e)=>this.controlarEnvio(e)}>
+            <label htmlFor="">Filtrar por:</label>
+            <input type ="text" name ="filtro" onChange={(e)=> this.guardarDatosDelInput(e)} value = {this.state.ValorDelInput}/>
             <button type = 'submit'>Filtrar</button>
         </form>
     );

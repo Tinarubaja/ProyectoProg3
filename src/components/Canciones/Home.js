@@ -86,7 +86,7 @@ render(){
 
         
                 <section class="albumsgeneral" id="album">
-                    <h2 class="titulosindex">Albums</h2>
+                    <Link to="/VerTodas"><h2 class="titulosindex">Albums</h2></Link>
 
                      <div class="albums">
                         {this.state.albums.map((album,idx) => <CardAlbum key={album + idx}title = {album.title} cover={album.cover} link={album.id} id ={album.id}/>)}
