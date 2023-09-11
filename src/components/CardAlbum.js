@@ -25,6 +25,7 @@ class CardAlbum extends Component{
                     <section>
                         <button onClick={()=>this.verMenos()}>Ver menos</button>
                         <p>Descripcion</p>
+                        
                     </section>
                     :
                     <button onClick= {()=> this.verMas()}> Ver mas</button>

@@ -13,8 +13,8 @@ controlarEnvio(event){
 }
 guardarDatosDelInput(eventoEnCampoInput){
     this.setState({
-    valorDelInput: eventoEnCampoInput.target.value
-    },()=> console.log(this.state.ValorDelInput)); 
+    ValorDelInput: eventoEnCampoInput.target.value
+    },()=> console.log(eventoEnCampoInput.target.value)); 
 }
 
 render(){

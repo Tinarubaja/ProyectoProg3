@@ -25,7 +25,17 @@ class CardCancionHome extends Component{
         {this.state.boton !== false?
             <section>
                 <button onClick={()=>this.verMenos()}>Ver menos</button>
-                <p>Descripcion</p>
+                <p>Descripcion:</p>
+                {
+                    this.props.duration !== null ?
+                    <>
+                        <p>Duración: {this.props.duration}</p>
+                        <p>Ranking: {this.props.ranking}</p>
+                        <p>Explicit lyrics: {this.props.explicit_lyrics}</p>
+                    </> :
+                        <p>Explicit lyrics: {this.props.explicit_lyrics}</p>
+                            }
+
             </section>
             :
             <button onClick= {()=> this.verMas()}> Ver mas</button>
