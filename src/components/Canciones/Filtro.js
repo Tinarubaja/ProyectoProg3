@@ -21,7 +21,7 @@ render(){
     return(
         <form action=" " onSubmit={(e)=>this.controlarEnvio(e)}>
             <label htmlFor="">Filtrar por:</label>
-            <input type ="text" name ="filtro" onChange={(e)=> this.guardarDatosDelInput(e)} value = {this.state.ValorDelInput}/>
+            <input type ="text" name ="filtro" placeholder="filtrar" onChange={(e)=> this.guardarDatosDelInput(e)} value = {this.state.ValorDelInput}/>
             <button type = 'submit'>Filtrar</button>
         </form>
     );
