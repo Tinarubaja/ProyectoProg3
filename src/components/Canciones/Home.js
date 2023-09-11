@@ -32,7 +32,32 @@ componentDidMount(){
     ))
     .catch(e => console.log(e))
 }
-
+busqueda(){
+    fetch(`https://api.deezer.com/chart/artist&top?=${this.state.valor}`)
+    .then(response => response.json())
+    .then(data => this.setState(
+        {
+            busqueda:data.results,
+        }
+    ))
+    .catch(error => console.log(error))
+}
+evitarSubmit(event){
+    event.preventDefault();
+}
+controlarCambios(event){
+    this.setState({valor:event.target.value},
+        ()=> this.busqueda()
+        )
+}
+render(){
+    return(
+        <form onSubmit={(event)=> this.evitarSubmit(event)}>
+            <label>Buscador</label>
+            <input type='text' onChange={(event)=> this.controlarCambios(event)} value={this.state.valor}/>
+        </form>
+    )
+}
 
 componentDidUpdate(){
     console.log(this.state.albums)
@@ -57,6 +82,7 @@ render(){
             </div>
             </section>
 
+
         
                 <section class="albumsgeneral" id="album">
                     <h2 class="titulosindex">Albums</h2>
@@ -64,20 +90,15 @@ render(){
                      <div class="albums">
                         {this.state.albums.map((album,idx) => <CardAlbum key={album + idx}title = {album.title} cover={album.cover}/>)}
                         
+                        {this.state.albums.map((album,idx) => <CardAlbum key={album + idx}title = {album.title} cover={album.album.cover}/>)}
+                     
                     </div>               
                 </section>
 
                 <section class="artistasgeneral" id="artist">
                     <h2 class="titulosindex">Canciones</h2>
-                    
-
                     <div class="artistas">
-                    
-    
                     {this.state.canciones.map((cancion,idx) => <CardCancionHome key={cancion + idx}title = {cancion.title} link={cancion.id} id= {cancion.id} /> )}
-                    
-
-
                     </div>
                 </section>
 
@@ -88,5 +109,5 @@ render(){
 }
 
 
-
+<Footer/>
 export default Home;
