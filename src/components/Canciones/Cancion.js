@@ -44,6 +44,7 @@ class Cancion extends Component{
                         <audio controls>
                             <source src={this.state.canciones.preview}></source>
                         </audio>
+                        <button type='submit'>Agregar a favoritos</button>
                     </section>
                 
                 }

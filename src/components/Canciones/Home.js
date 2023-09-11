@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import CardAlbum from "../CardAlbum";
+import Footer from "./Footer";
 
 import {Link} from 'react-router-dom';
 import CardCancionHome from "../CardCancionHome";
@@ -88,9 +89,7 @@ render(){
                     <h2 class="titulosindex">Albums</h2>
 
                      <div class="albums">
-                        {this.state.albums.map((album,idx) => <CardAlbum key={album + idx}title = {album.title} cover={album.cover}/>)}
-                        
-                        {this.state.albums.map((album,idx) => <CardAlbum key={album + idx}title = {album.title} cover={album.album.cover}/>)}
+                        {this.state.albums.map((album,idx) => <CardAlbum key={album + idx}title = {album.title} cover={album.cover} link={album.id} id ={album.id}/>)}
                      
                     </div>               
                 </section>

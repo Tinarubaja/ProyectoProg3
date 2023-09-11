@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 class CardAlbum extends Component{
     constructor(props){
         super(props); 
@@ -18,6 +19,8 @@ class CardAlbum extends Component{
         <article>
                 <h1>{this.props.title}</h1>
                 <img src={this.props.cover}/>
+                <Link to={`/Albums/${this.props.id}`}>Detalle album</Link>
+                <h1>{this.props.id}</h1>
                 {this.state.boton !== false?
                     <section>
                         <button onClick={()=>this.verMenos()}>Ver menos</button>
