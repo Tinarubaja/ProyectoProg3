@@ -18,9 +18,7 @@ class CardCancionHome extends Component{
         return(
         <article>
             <h1>{this.props.title}</h1>
-            
             <Link to={`/Cancion/${this.props.id}`}>detalle cancion</Link>
-            <h1>{this.props.id}</h1>
             
         {this.state.boton !== false?
             <section>

@@ -55,12 +55,12 @@ class Busqueda extends Component{
                 <section class="albumsgeneral" id="album">
                     <h2 class="titulosindex">Albums</h2>
                      <div class="albums">
-                     {this.state.albums.map((album,idx) => <CardAlbum key={album + idx}title = {album.title} cover={album.cover}/>)}
+                     {this.state.albums.map((album,idx) => <CardAlbum key={album + idx}title = {album.title} cover={album.cover} id={album.id}/>)}
                      </div>
                 </section>
                 <section>
                     <h2>CANCIONES</h2>
-                    {this.state.canciones.map((cancion,idx) => <CardCancionHome key={cancion + idx}title = {cancion.title} />)}
+                    {this.state.canciones.map((cancion,idx) => <CardCancionHome key={cancion + idx}title = {cancion.title} id={cancion.id} />)}
                 </section>
             </div>
         )

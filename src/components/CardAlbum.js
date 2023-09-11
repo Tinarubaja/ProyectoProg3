@@ -20,7 +20,6 @@ class CardAlbum extends Component{
                 <h1>{this.props.title}</h1>
                 <img src={this.props.cover}/>
                 <Link to={`/Albums/${this.props.id}`}>Detalle album</Link>
-                <h1>{this.props.id}</h1>
                 {this.state.boton !== false?
                     <section>
                         <button onClick={()=>this.verMenos()}>Ver menos</button>
