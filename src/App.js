@@ -3,7 +3,7 @@ import Busqueda from "./components/Canciones/Busqueda";
 import Header from "./components/Canciones/Header";
 import Home from "./components/Canciones/Home";
 import Albums from "./components/Canciones/Albums";
-import Artist from "./components/Canciones/Artist";
+import Cancion from "./components/Canciones/Cancion";
 import Generos from "./components/Canciones/Generos";
 import Playlist from "./components/Canciones/Playlist";
 import Songs from "./components/Canciones/Songs";
@@ -27,9 +27,9 @@ function App() {
         <Route exact path="/" component>
           <Home></Home>
         </Route>
-        <Route path ="/Artist/:id" component={Artist}/>
+        <Route path ="/Cancion/:id" component={Cancion}/>
         
-        <Route path="/Albums" component={Albums}/>
+        <Route path="/Albums/:id" component={Albums}/>
         <Route path ="/Generos" component={Generos}/>
         <Route path ="/Playlist" component={Playlist}/>
         <Route path ="/Songs" component={Songs}/>

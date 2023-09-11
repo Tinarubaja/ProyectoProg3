@@ -1,13 +1,14 @@
 import React, {Component} from "react";
 import CardAlbum from "../CardAlbum";
-import CardArtista from "../CardArtista";
+
 import {Link} from 'react-router-dom';
+import CardCancionHome from "../CardCancionHome";
 class Home extends Component{
     constructor(){
         super();
         this.state = {
             albums:[],
-            artista :[],
+            canciones :[],
            // boton : false
         }
     }
@@ -15,7 +16,7 @@ class Home extends Component{
 componentDidMount(){
     console.log("En componentDidMount");
 
-    fetch("https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks&top?limit=5")
+    fetch("https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/albums&top?limit=5")
     .then(response => response.json())
     .then( data => this.setState(
         this.state.albums= data.data
@@ -23,10 +24,10 @@ componentDidMount(){
     ))
     .catch(e => console.log(e))
 
-    fetch("https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/artists&top?limit=5")
+    fetch("https://thingproxy.freeboard.io/fetch/https://api.deezer.com/chart/0/tracks&top?limit=5")
     .then(response => response.json())
     .then( data => this.setState(
-        this.state.artista= data.data,
+        this.state.canciones= data.data,
         console.log(data)
     ))
     .catch(e => console.log(e))
@@ -35,7 +36,7 @@ componentDidMount(){
 
 componentDidUpdate(){
     console.log(this.state.albums)
-    console.log(this.state.artista)
+    console.log(this.state.canciones)
 }
 //verMas(){
   //  this.setState({ boton:true})
@@ -61,19 +62,19 @@ render(){
                     <h2 class="titulosindex">Albums</h2>
 
                      <div class="albums">
-                        {this.state.albums.map((album,idx) => <CardAlbum key={album + idx}title = {album.title} cover={album.album.cover}/>)}
+                        {this.state.albums.map((album,idx) => <CardAlbum key={album + idx}title = {album.title} cover={album.cover}/>)}
                         
                     </div>               
                 </section>
 
                 <section class="artistasgeneral" id="artist">
-                    <h2 class="titulosindex">Artist</h2>
+                    <h2 class="titulosindex">Canciones</h2>
                     
 
                     <div class="artistas">
                     
     
-                    {this.state.artista.map((artista,idx) => <CardArtista key={artista + idx}name = {artista.name} picture={artista.picture}link={artista.id} id= {artista.id} /> )}
+                    {this.state.canciones.map((cancion,idx) => <CardCancionHome key={cancion + idx}title = {cancion.title} link={cancion.id} id= {cancion.id} /> )}
                     
 
 
