@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
-import Footer from './Footer';
+//import Footer from './Footer';
 import CardAlbum from '../CardAlbum';
 import Filtro from './Filtro';
 
 class VerTodasAlbum extends Component{
-    constructor(props){
-        super(props)
+    constructor(){
+        super()
         this.state={
-            albums:[],
-            filtro:""
+            albums:[]
+            
         }
 
     }
@@ -17,7 +17,7 @@ class VerTodasAlbum extends Component{
         console.log(url)
         fetch(url)
             .then(response => response.json())
-            .then((data) => this.setState(
+            .then(data => this.setState(
                 {
                     albums:data.data
                  }
@@ -30,31 +30,32 @@ class VerTodasAlbum extends Component{
         //event.preventDefault()
     //}
     FiltrarFormulario(textoAFiltrar){
-        let formularioFiltrado = this.state.albums.filter(function(form){
-            return form.title.includes(textoAFiltrar)
+        let formularioFiltrado = this.state.albums.filter(function(unAlbum){
+            return unAlbum.title.includes(textoAFiltrar)
 
          
         })
         this.setState({
-            albums: formularioFiltrado
+            albums: formularioFiltrado,
             // filtro:textoAFiltrar.target.value
-        })
-    }
-    render(){
-        return(
-            <section>
-            <Filtro/>
             
 
+        })
+        console.log(this.setState)
+    }
+    render(){
+        console.log("Me monté render");
+        console.log(this.state)
+        
+        return(
             <section class="albumsgeneral" id="album">
+                <Filtro></Filtro>
                     <h2>Albums</h2>
-                     <div class="albums">
-                        {this.state.albums.map(function(form){return <CardAlbum key={form.id}title = {form.title} cover={form.cover} link={form.id} id ={form.id}/>})}
-                     
-                    </div>               
-                </section>
-                </section>
-            
+                        {this.state.albums.map(function(unAlbum){
+                            return <CardAlbum key={unAlbum.id} title = {unAlbum.title} id={unAlbum.id}/>
+                            })
+                        }
+            </section>   
         )
     }
 }
