@@ -28,8 +28,7 @@ class CardCancionHome extends Component{
                     this.props.duration !== null ?
                     <>
                         <p>Duracion: {this.props.duration}</p>
-                        <p>Ranking: {this.props.ranking}</p>
-                        <p>Explicit lyrics: {this.props.explicit_lyrics}</p>
+                        <p>Ranking: {this.props.rank}</p>
                     </> :
                         <p>Explicit lyrics: {this.props.explicit_lyrics}</p>
                             }

@@ -27,9 +27,9 @@ class CardAlbum extends Component{
                 {
                     this.props.duration !== null ?
                     <>
-                        <p>Duracion: {this.props.duration}</p>
-                        <p>Ranking: {this.props.ranking}</p>
-                        <p>Explicit lyrics: {this.props.explicit_lyrics}</p>
+                        
+                        <p> Record type: {this.props.record_type}</p>
+                        <p>Track: {this.props.position}</p>
                     </> :
                         <p>Explicit lyrics: {this.props.explicit_lyrics}</p>
                             }

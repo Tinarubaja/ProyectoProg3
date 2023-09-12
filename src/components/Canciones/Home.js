@@ -89,7 +89,7 @@ render(){
                     <Link to="/VerTodas"><h2 class="titulosindex">Albums</h2></Link>
 
                      <div class="albums">
-                        {this.state.albums.map((album,idx) => <CardAlbum key={album + idx}title = {album.title} cover={album.cover} link={album.id} id ={album.id} duration={album.duration} ranking={album.ranking} explicit_lyrics= {album.explicit_lyrics}/>)}
+                        {this.state.albums.map((album,idx) => <CardAlbum key={album + idx}title = {album.title} cover={album.cover} link={album.id} id ={album.id} duration={album.duration} position={album.position} record_type= {album.record_type}/>)}
                      
                     </div>               
                 </section>
@@ -97,7 +97,7 @@ render(){
                 <section class="artistasgeneral" id="artist">
                     <h2 class="titulosindex">Canciones</h2>
                     <div class="artistas">
-                    {this.state.canciones.map((cancion,idx) => <CardCancionHome key={cancion + idx}title = {cancion.title} link={cancion.id} id= {cancion.id} duration={cancion.duration} ranking={cancion.ranking} explicit_lyrics= {cancion.explicit_lyrics}/> )}
+                    {this.state.canciones.map((cancion,idx) => <CardCancionHome key={cancion + idx}title = {cancion.title} link={cancion.id} id= {cancion.id} duration={cancion.duration} rank={cancion.rank} /> )}
                     </div>
                 </section>
 

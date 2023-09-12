@@ -31,11 +31,13 @@ class VerTodasAlbum extends Component{
     //}
     FiltrarFormulario(textoAFiltrar){
         let formularioFiltrado = this.state.albums.filter(function(form){
-            return form.title.tolowerCase().includes(textoAFiltrar.target.value.toLowerCase())
+            return form.title.includes(textoAFiltrar)
+
+         
         })
         this.setState({
-            albums: formularioFiltrado,
-            filtro:textoAFiltrar.target.value
+            albums: formularioFiltrado
+            // filtro:textoAFiltrar.target.value
         })
     }
     render(){
@@ -47,7 +49,7 @@ class VerTodasAlbum extends Component{
             <section class="albumsgeneral" id="album">
                     <h2>Albums</h2>
                      <div class="albums">
-                        {this.state.albums.map((album,idx) => <CardAlbum key={album + idx}title = {album.title} cover={album.cover} link={album.id} id ={album.id}/>)}
+                        {this.state.albums.map(function(form){return <CardAlbum key={form.id}title = {form.title} cover={form.cover} link={form.id} id ={form.id}/>})}
                      
                     </div>               
                 </section>
