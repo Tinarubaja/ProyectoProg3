@@ -23,7 +23,16 @@ class CardAlbum extends Component{
                 {this.state.boton !== false?
                     <section>
                         <button onClick={()=>this.verMenos()}>Ver menos</button>
-                        <p>Descripcion</p>
+                        <p>Descripcion:</p>
+                {
+                    this.props.duration !== null ?
+                    <>
+                        <p>Duracion: {this.props.duration}</p>
+                        <p>Ranking: {this.props.ranking}</p>
+                        <p>Explicit lyrics: {this.props.explicit_lyrics}</p>
+                    </> :
+                        <p>Explicit lyrics: {this.props.explicit_lyrics}</p>
+                            }
                         
                     </section>
                     :

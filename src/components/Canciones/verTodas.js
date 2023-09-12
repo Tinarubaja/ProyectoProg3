@@ -7,7 +7,8 @@ class VerTodasAlbum extends Component{
     constructor(props){
         super(props)
         this.state={
-            albums:[]
+            albums:[],
+            filtro:""
         }
 
     }
@@ -25,18 +26,23 @@ class VerTodasAlbum extends Component{
             .catch(error => console.log('El error es' + error))
             console.log(this.state.albums)
     }
+    //preventDefault(event){
+        //event.preventDefault()
+    //}
     FiltrarFormulario(textoAFiltrar){
         let formularioFiltrado = this.state.albums.filter(function(form){
-            return form.title.includes(textoAFiltrar)
+            return form.title.tolowerCase().includes(textoAFiltrar.target.value.toLowerCase())
         })
         this.setState({
-            albums: formularioFiltrado
+            albums: formularioFiltrado,
+            filtro:textoAFiltrar.target.value
         })
     }
     render(){
         return(
             <section>
             <Filtro/>
+            
 
             <section class="albumsgeneral" id="album">
                     <h2>Albums</h2>
