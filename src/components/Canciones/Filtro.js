@@ -11,7 +11,7 @@ class Filtro extends Component {
 controlarEnvio(event){
     event.preventDefault();
     console.log("No me mandé");
-    this.props.filtrar(event.target.value)
+    this.props.filtrar(this.state.ValorDelInput)
 
     return true
 }

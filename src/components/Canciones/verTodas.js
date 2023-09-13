@@ -7,7 +7,8 @@ class VerTodasAlbum extends Component{
     constructor(){
         super()
         this.state={
-            albums:[]
+            albums:[],
+            albumsFiltrados: []
             
         }
 
@@ -29,14 +30,14 @@ class VerTodasAlbum extends Component{
     //preventDefault(event){
         //event.preventDefault()
     //}
-    FiltrarFormulario= (textoAFiltrar)=>{
+    FiltrarFormulario= (textoAFiltrar)=>{console.log(textoAFiltrar)
         let formularioFiltrado = this.state.albums.filter(function(unAlbum){
-            return unAlbum.title.includes(textoAFiltrar)
+            return unAlbum.title.toLowerCase().includes(textoAFiltrar.toLowerCase())
 
          
         })
         this.setState({
-            albums: formularioFiltrado,
+            albumsFiltrados: formularioFiltrado,
             // filtro:textoAFiltrar.target.value
             
 
@@ -51,8 +52,8 @@ class VerTodasAlbum extends Component{
             <section class="albumsgeneral" id="album">
                 <Filtro filtrar={this.FiltrarFormulario}></Filtro>
                     <h2>Albums</h2>
-                        {this.state.albums.map(function(unAlbum){
-                            return <CardAlbum key={unAlbum.id} title = {unAlbum.title} id={unAlbum.id}/>
+                        {(this.state.albumsFiltrados.length === 0? this.state.albums : this.state.albumsFiltrados).map(function(unAlbum){
+                            return <CardAlbum key={unAlbum.id} title = {unAlbum.title} id={unAlbum.id} cover = {unAlbum.cover} duration={unAlbum.duration} position={unAlbum.position} record_type= {unAlbum.record_type}/>
                             })
                         }
             </section>   
