@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import CardAlbum from './CardAlbum';
+import CardAlbum from '../../CardAlbum';
 
 
 class Favoritos extends Component{

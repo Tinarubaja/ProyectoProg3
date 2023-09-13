@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 //import Footer from './Footer';
-import CardAlbum from '../CardAlbum';
-import Filtro from './Filtro';
+import CardAlbum from '../../CardAlbum';
+import Filtro from '../../Formulario/Filtro';
 
 class VerTodasAlbum extends Component{
     constructor(){
