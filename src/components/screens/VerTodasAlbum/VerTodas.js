@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 //import Footer from './Footer';
-import CardAlbum from '../../CardAlbum';
+import CardAlbum from '../../Cards/CardAlbum';
 import Filtro from '../../Formulario/Filtro';
 
 class VerTodasAlbum extends Component{

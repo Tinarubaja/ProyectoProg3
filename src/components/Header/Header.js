@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {Link} from 'react-router-dom';
-import Formulario from "./Formulario";
+import Formulario from "../Formulario/Formulario";
 class Header extends Component{
     constructor(){
         super();
@@ -25,11 +25,9 @@ render(){
         <div class="menu">
             <ul class="list">
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/Artist">Artist</Link></li>
-            <li><Link to="/Generos">Generos</Link></li>
-            <li><Link to="/Playlist">Playlist</Link></li>
+            <li><Link to="/Favoritos">Favoritos</Link></li>
             <li><Link to="/Songs">Songs</Link></li>
-            <li><Link to="/VerTodas">Ver Todas</Link></li>
+            <li><Link to="/VerTodas">Albums</Link></li>
 
             <li>
                 <Formulario></Formulario>

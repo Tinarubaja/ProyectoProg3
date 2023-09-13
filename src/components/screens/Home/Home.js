@@ -1,9 +1,9 @@
 import React, {Component} from "react";
-import CardAlbum from "../../CardAlbum";
-import Footer from "./Footer";
+import CardAlbum from "../../Cards/CardAlbum";
+import Footer from "../../Footer/Footer";
 
 import {Link} from 'react-router-dom';
-import CardCancionHome from "../../CardCancionHome";
+import CardCancionHome from "../../Cards/CardCancionHome";
 class Home extends Component{
     constructor(){
         super();

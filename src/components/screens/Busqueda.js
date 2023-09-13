@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 //import Formulario from './Formulario';
-import CardAlbum from "../CardAlbum";
-import CardCancionHome from '../CardCancionHome';
+import CardAlbum from "../Cards/CardAlbum";
+import CardCancionHome from '../Cards/CardCancionHome';
 
 
 class Busqueda extends Component{
