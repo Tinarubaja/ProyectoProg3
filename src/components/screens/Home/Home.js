@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import CardAlbum from "../../Cards/CardAlbum";
 import Footer from "../../Footer/Footer";
+import "./Home.css"
 
 import {Link} from 'react-router-dom';
 import CardCancionHome from "../../Cards/CardCancionHome";

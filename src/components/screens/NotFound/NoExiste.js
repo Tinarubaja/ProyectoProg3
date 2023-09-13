@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import "./NoExiste.css"
 
 
 function NoExiste(){

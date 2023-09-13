@@ -1,5 +1,6 @@
 // import React, {Component} from 'react';
 // import CardAlbum from '../../Cards/CardAlbum';
+//import "./Favoritos.css"
 
 
 // class Favoritos extends Component{

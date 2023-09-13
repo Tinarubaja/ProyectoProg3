@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import "./CardAlbum.css"
 class CardAlbum extends Component{
     constructor(props){
         super(props); 

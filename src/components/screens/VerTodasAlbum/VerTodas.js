@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-//import Footer from './Footer';
+import Footer from "../../Footer/Footer";
 import CardAlbum from '../../Cards/CardAlbum';
 import Filtro from '../../Formulario/Filtro';
+import "./VerTodasAlbum.css"
 
 class VerTodasAlbum extends Component{
     constructor(){
@@ -59,5 +60,7 @@ class VerTodasAlbum extends Component{
             </section>   
         )
     }
+    
 }
+<Footer/>
 export default VerTodasAlbum;
