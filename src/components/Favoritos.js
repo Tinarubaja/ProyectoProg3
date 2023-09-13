@@ -7,7 +7,21 @@ class Favoritos extends Component{
         super();
         this.state = {
             albums:[],
+            textoBoton:"agregar a favoritos"
         }
+    }
+    agregarAFavoritos(id){
+        // agregar un id adentro de array y colocar ese array en localstorage
+        let arrayFavoritos=[]
+        arrayFavoritos.push(id)
+        // subirlo local storage stringifiado
+        let arrayFavoritosAString = JSON.stringify(arrayFavoritos)
+        localStorage.setItem('favoritos', arrayFavoritos)
+
+        this.setState({
+            textoBoton:'quitar de favoritos'
+        })
+
     }
 
     componentDidMount(){
