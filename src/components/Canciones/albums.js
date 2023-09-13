@@ -30,6 +30,7 @@ class Album extends Component{
             .catch(error => console.log('El error es' + error))
             console.log(this.state.albums)
     }
+
     
 
     render(){
@@ -54,7 +55,8 @@ class Album extends Component{
                                 <ul ><li >{cancion.title}</li></ul>
                             </div>
                         ))}
-                        <button type="submit">Agregar a favoritos</button>
+                        {/* <button type="submit">Agregar a favoritos</button> */}
+                        { <button onClick={()=>this.anadirFav(this.props.albums.id)}>añadir a Favoritos</button> }
                        
                     </section>
                 

@@ -10,6 +10,7 @@ import Songs from "./components/Canciones/Songs";
 import VerTodas from "./components/Canciones/VerTodas";
 import NoExiste from "./components/Canciones/NoExiste";
 import Footer from "./components/Canciones/Footer";
+// import Favoritos from "./components/Favoritos";
 //import Cancion from "./components/Canciones/Cancion";
 import "./components/styles.css";
 
