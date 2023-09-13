@@ -1,15 +1,18 @@
 import React , {Component} from 'react';
 class Filtro extends Component {
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
-            ValorDelInput:''
+            ValorDelInput:'',
+            
         }
     }
 
 controlarEnvio(event){
     event.preventDefault();
     console.log("No me mandé");
+    this.props.filtrar(event.target.value)
+
     return true
 }
 guardarDatosDelInput(eventoEnCampoInput){
@@ -23,7 +26,7 @@ render(){
     return(
         <form action="" onSubmit={(e)=>this.controlarEnvio(e)}>
             <label htmlFor="">Filtrar por:</label>
-            <input type ="text" name ="filtro" placeholder="filtrar" onChange={(e)=> this.guardarDatosDelInput(e)} value={this.state.ValorDelInput}/>
+            <input type ="text" name ="filtro" placeholder="filtrar" onChange={(e)=> this.guardarDatosDelInput(e)} defaultValue={this.state.ValorDelInput}/>
             <button type = "submit">Filtrar</button>
         </form>
     );

@@ -29,7 +29,7 @@ class VerTodasAlbum extends Component{
     //preventDefault(event){
         //event.preventDefault()
     //}
-    FiltrarFormulario(textoAFiltrar){
+    FiltrarFormulario= (textoAFiltrar)=>{
         let formularioFiltrado = this.state.albums.filter(function(unAlbum){
             return unAlbum.title.includes(textoAFiltrar)
 
@@ -49,7 +49,7 @@ class VerTodasAlbum extends Component{
         
         return(
             <section class="albumsgeneral" id="album">
-                <Filtro></Filtro>
+                <Filtro filtrar={this.FiltrarFormulario}></Filtro>
                     <h2>Albums</h2>
                         {this.state.albums.map(function(unAlbum){
                             return <CardAlbum key={unAlbum.id} title = {unAlbum.title} id={unAlbum.id}/>
