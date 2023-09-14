@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 //import Formulario from './Formulario';
-import CardAlbum from "../Cards/CardAlbum/CardAlbum";
+import CardAlbumBusqueda from "../CardAlbumBusqueda";
 import CardCancionHome from '../Cards/CardCancionHome';
 
 
@@ -40,7 +40,6 @@ class Busqueda extends Component{
     componentDidUpdate(){
         console.log(this.state.albums)
         console.log(this.state.canciones)
-        console.log(this.canciones+"probando")
         
     }
    
@@ -55,12 +54,14 @@ class Busqueda extends Component{
                 <section class="artistasgeneral" id="album">
                     <h2 class="titulosindex">Albums</h2>
                      <div class="albums">
-                     {this.state.albums.map((album,idx) => <CardAlbum key={album + idx}title = {album.title} cover={album.cover} id={album.id}/>)}
+                         {this.state.albums.map((album,idx) => <CardAlbumBusqueda key={album + idx}title = {album.title} cover_big={album.cover_big} link={album.id} id ={album.id}  record_type= {album.record_type} nb_tracks={album.nb_tracks}/>)}
                      </div>
                 </section>
-                <section>
-                    <h2>CANCIONES</h2>
-                    {this.state.canciones.map((cancion,idx) => <CardCancionHome key={cancion + idx}title = {cancion.title} id={cancion.id} />)}
+                <section class="artistasgeneral" id="artist">
+                        <h2 class="titulosindex">Canciones</h2>
+                        <div class="artistas">
+                            {this.state.canciones.map((cancion,idx) => <CardCancionHome key={cancion + idx}title = {cancion.title} id={cancion.id} duration={cancion.duration} rank={cancion.rank} />)}
+                        </div>
                 </section>
             </div>
         )

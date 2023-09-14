@@ -1,0 +1,49 @@
+.cancioncontenedor {
+    padding: 1%;
+    margin-top: 2%;
+    box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.26);
+    border-radius: 1%;
+    display: flex;
+    align-items: stretch;
+    flex-wrap:nowrap;
+    flex-direction: row;
+    justify-content:space-around;
+}
+
+.fotoCancion{
+    border-radius: 2%;
+
+}
+.detallesmargen{ /*margenes para todos los detalles*/
+    margin: 150px 120px 40px 120px;
+
+}
+.descrpcioCancion{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.descrpcionalbum h3{
+    margin-top: 6%;
+}
+
+.tituloCancion{
+    font-size: 35px;
+    margin-bottom: 6%;
+}
+
+.botonFavs{
+    margin-top: 5%;
+    padding: 2%;
+    background-color: rgb(20, 181, 20);
+    border: none;
+    border-radius: 10px;
+    margin-left: 2%;
+    margin-bottom: 5%; 
+}
+.musica{
+    margin-top: 50px;
+}

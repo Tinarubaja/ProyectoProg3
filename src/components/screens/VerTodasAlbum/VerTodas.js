@@ -54,7 +54,7 @@ class VerTodasAlbum extends Component{
                 <Filtro filtrar={this.FiltrarFormulario}></Filtro>
                     <h2>Albums</h2>
                         {(this.state.albumsFiltrados.length === 0? this.state.albums : this.state.albumsFiltrados).map(function(unAlbum){
-                            return <CardAlbum key={unAlbum.id} title = {unAlbum.title} id={unAlbum.id} cover = {unAlbum.cover} duration={unAlbum.duration} position={unAlbum.position} record_type= {unAlbum.record_type}/>
+                            return <CardAlbum key={unAlbum.id} title = {unAlbum.title} id={unAlbum.id} cover_big = {unAlbum.cover_big} duration={unAlbum.duration} position={unAlbum.position} record_type= {unAlbum.record_type}/>
                             })
                         }
             </section>   

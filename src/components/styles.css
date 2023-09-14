@@ -159,12 +159,12 @@ cards de artistas
   }
 */
 
-/*------------------ALBUMS----------------*/
+/*------------------ALBUMS----
 .albumsgeneral{
     margin-top: 15%;
     padding: 5%; 
 }
-.albums{/*se usa para la pagina de generos y en el index en l aparte de los albumnes*/
+.albums{
     display:flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -172,7 +172,7 @@ cards de artistas
     align-items: center;    
 }
 
-/*---cards de albums*/
+
   .cardalbum {
     transition: 0.3s;
     width: 13%;
@@ -193,7 +193,7 @@ cards de artistas
   .containeralbum {
     padding: 2px 16px;
   }
-
+------------*/
 
 
 /*------------------SONGS----------------*/

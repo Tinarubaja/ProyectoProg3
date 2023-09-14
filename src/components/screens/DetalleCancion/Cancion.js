@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import CardCancionHome from '../../Cards/CardCancionHome';
+import "./DetalleCancion.css"
 
 class Cancion extends Component{
     constructor(props){
@@ -36,17 +37,21 @@ class Cancion extends Component{
             <React.Fragment >           
                 {this.state.canciones.length === 0 ?
                     <h2> CARGANDO...</h2>:
-                     <section>
-                        <h2>{this.state.canciones.title}</h2>
-                        <h2>{this.state.artista.name}</h2>
-                        <img src={this.state.album.cover}></img>
-                        <h2>{this.state.album.title}</h2>
-                        <audio controls>
-                            <source src={this.state.canciones.preview}></source>
-                        </audio>
-                        <button type='submit'>Agregar a favoritos</button>
+                    <section class="detallesmargen">
+                        <section class="cancioncontenedor">
+                            <div class="fotoCancion"><img src={this.state.album.cover_medium}></img></div>
+                            <div class="descrpcioCancion">
+                                <h2 class="tituloCancion">{this.state.canciones.title}</h2>
+                                <h3>{this.state.artista.name}</h3>
+                                <h3>{this.state.album.title}</h3>
+                                <audio controls class="musica">
+                                    <source src={this.state.canciones.preview}></source>
+                                </audio>
+
+                                <button  class="botonFavs" type='submit'>Agregar a favoritos</button>
+                            </div>
+                        </section>
                     </section>
-                
                 }
            </React.Fragment>
 

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import "./CardCancion.css"
+import Album from './CardAlbum/CardAlbum';
 class CardCancionHome extends Component{
     constructor(props){
         super(props);
@@ -22,6 +23,7 @@ class CardCancionHome extends Component{
             <Link to={`/Cancion/${this.props.id}`}>
                 <h4>{this.props.title}</h4>
             </Link>
+            
             
         {this.state.boton !== false?
             <section>

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
-import "./CardAlbum.css"
+import "../components/Cards/CardAlbum/CardAlbum.css"
 class CardAlbum extends Component{
     constructor(props){
         super(props); 
@@ -31,7 +31,7 @@ class CardAlbum extends Component{
                         <>
                             
                             <p> Record type: {this.props.record_type}</p>
-                            <p>Position: {this.props.position}</p>
+                            <p>Numero de canciones: {this.props.nb_tracks}</p>
                         </> :
                             <p>Explicit lyrics: {this.props.explicit_lyrics}</p>
                                 }
