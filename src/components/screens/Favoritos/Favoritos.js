@@ -1,97 +1,92 @@
-// import React, {Component} from 'react';
-// import CardAlbum from '../../Cards/CardAlbum';
-//import "./Favoritos.css"
+import React, { Component } from "react";
+import Header from "../../Header/Header";
+import Footer from "../../Footer/Footer";
+import CardAlbum from "../../Cards/CardAlbum/CardAlbum";
+import CardCancionHome from "../../Cards/CardCancionHome";
+import "./Favoritos.css";
 
 
-// class Favoritos extends Component{
-//     constructor(){
-//         super();
-//         this.state = {
-//             albums:[],
-//             textoBoton:"agregar a favoritos"
-//         }
-//     }
-//     agregarAFavoritos(id){
-//         // agregar un id adentro de array y colocar ese array en localstorage
-//         let arrayFavoritos=[]
-//         arrayFavoritos.push(id)
-//         // subirlo local storage stringifiado
-//         let arrayFavoritosAString = JSON.stringify(arrayFavoritos)
-//         localStorage.setItem('favoritos', arrayFavoritos)
+class Favoritos extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            listadoCanciones: [],
+            listadoAlbums: [],
+        }
+    }
 
-//         this.setState({
-//             textoBoton:'quitar de favoritos'
-//         })
+    componentDidMount() {
+        let favoritos = JSON.parse(localStorage.getItem("favoritos"))
 
-//     }
+        if (favoritos == null) {
+            favoritos = []
+        }
 
-//     componentDidMount(){
-//         let favoritos = [];
-//         let recuperoStorage = localStorage.getItem('favoritos')
+        let listadoCanciones = favoritos.filter(fav => fav.duracion !== null)
+        let listadoAlbums = favoritos.filter(fav => fav.duracion === null)
 
-//         if(recuperoStorage !== null){
-//             favoritos = JSON.parse(recuperoStorage) 
-//             //let albumOk = [];
+        this.setState({
+            listadoCanciones: listadoCanciones,
+            listadoAlbums: listadoAlbums
+        })
 
-//         //     favoritos.forEach(unIdFavorito => { //aca busco el id 
-//         //         let url = `https://thingproxy.freeboard.io/fetch/https://api.deezer.com/album/${unIdFavorito}`
-//         //         fetch(url)
-//         //             .then(response => response.json())
-                    
-//         //             .then((data) => this.setState(
-//         //                 {
-//         //                     //albums: AlbumOk.push(data) }
-                            
-//         //             ))
-//         //             .catch(error => console.log('El error es' + error))
-                  
-//         //     }) 
-            
-//         // }
-// }
+        console.log(listadoCanciones)
+        console.log(listadoAlbums)
+    }
 
-// //borrar(id){
-//     //Tiene que agegar un id dentro de un Array y guardarlo en localstorage.
-//     // Si el id ya existe ofrecer al usuario la posibilidad de quitar el id del array de favoritos.
-//     let favoritos = [];
-//     let recuperoStorage = localStorage.getItem('favoritos')
+    render() {
+        return (
+            <>
+                
+                <main>
+                    <h1>Canciones favoritas</h1>
+                    {
+                        this.state.listadoCanciones.map((cancion, i) =>
+                        <CardCancionHome
+                        key={i} 
+                        title = {cancion.title} 
+                        link={cancion.id}
+                         id= {cancion.id} 
+                         duration={cancion.duration}
+                          rank={cancion.rank}
+                        // id={cancion.id} 
+                        // titulo={cancion.titulo} 
+                        // foto_album={cancion.foto_album} 
+                        // nombre_artista={cancion.nombre_artista} 
+                        // titulo_album={cancion.titulo_album} 
+                        // duracion={cancion.duracion} 
+                        // ranking={cancion.ranking} 
+                        />
+                        )
+                    }
+                    <h1>Albumes favoritos</h1>
+                    {
+                        this.state.listadoAlbums.map((album, i) =>
+                        <CardAlbum
+                        key={i} 
+                        title = {album.title} 
+                        cover_big={album.cover_big} 
+                        link={album.id} 
+                        id ={album.id}
+                        duration={album.duration}
+                        position={album.position}
+                        record_type= {album.record_type}
+                        // id={album.id} 
+                        // titulo={album.titulo} 
+                        // foto_album={album.foto_album} 
+                        // nombre_artista={album.nombre_artista} 
+                        // titulo_album={album.titulo_album} 
+                        // duracion={album.duracion} 
+                        // ranking={album.ranking} 
+                        />
+                        )
 
-//     if(recuperoStorage !== null){
-//         let favoritosToArray = JSON.parse(recuperoStorage);
-//         favoritos = favoritosToArray
-//     }
+                    }
+                </main>
+                
+            </>
+        )
+    }
+}
 
-//     //Preguntemos si el id ya está en el array.
-//     if(favoritos.includes(id)){ 
-//         favoritos = favoritos.filter(unId => unId !== id);
-//         this.setState({
-//         albums: this.state.albums.filter(unAlbum => unAlbum.id !== id) 
-//         })
-//     }
-
-
-//     let favoritosToString = JSON.stringify(favoritos);
-//     localStorage.setItem('favoritos', favoritosToString);
-
-//     console.log(localStorage); // aca veo que me trae el storage
-
-// }
-
-    
-//         render(){
-//             return(
-//                 <React.Fragment>
-//                     <h2 >Mis albums favoritos</h2>
-//                      <section >
-//                      {this.state.albums.map((unAlbum, idx) => <CardAlbum key={unAlbum + idx} datosPeli={unAlbum} borrar={(AlbumFiltro)=> this.borrar(AlbumFiltro)} />)} 
-//                      </section>
-//                 </React.Fragment>
-//             )
-//         }
-    
-            
-
-//     }
-
-
-//export default Favoritos;
+export default Favoritos;

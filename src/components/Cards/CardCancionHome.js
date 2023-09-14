@@ -6,7 +6,9 @@ class CardCancionHome extends Component{
     constructor(props){
         super(props);
         this.state={
-            boton:false
+            boton:false,
+            favoritos:[],
+            textoBoton:"Agregar a favoritos"
         }
     }
     verMas(){
@@ -15,6 +17,37 @@ class CardCancionHome extends Component{
     }
     verMenos(){
         this.setState({boton:false})
+    }
+    componentDidMount(){
+        let arrayFavoritos = [];
+        let recuperoStorage = localStorage.getItem('favoritos')
+
+        if(recuperoStorage !== null){
+            arrayFavoritos = JSON.parse(recuperoStorage) 
+            if (arrayFavoritos.includes(this.props.id)){
+                this.setState({
+                    textoBoton: "Quitar de favorritos"
+                })
+            }
+        }
+
+    }
+    agregarYSacarDeFavs (id){
+        let arrayFavoritos = [];
+        let recuperoStorage = localStorage.getItem('CancionFav')
+        if (recuperoStorage !== null) {
+            arrayFavoritos = arrayFavoritos.filter(unId => unId != id);
+            this.setState({
+                textoBoton: "Agregar a favoritos"
+            })
+        }else{
+            arrayFavoritos.push(id);
+            this.setState({
+                textoBoton: "Quitar de favoritos"
+            })
+        }
+        let arrayFavoritosAString = JSON.stringify(arrayFavoritos)
+        localStorage.setItem('CancionFav' , arrayFavoritosAString)
     }
     render(){
         return(
@@ -43,6 +76,7 @@ class CardCancionHome extends Component{
             <button class="botonVermasMenosCancion" onClick= {()=> this.verMas()}> Ver mas</button>
 
         }
+        <button class="botonVermasMenosCancion" onClick={()=> this.agregarYSacarDeFavs(this.props.id)} type="button">{this.state.textoBoton}</button>
     
 
 
