@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import "./DetalleAlbum.css"
 class Album extends Component{
     constructor(props){
         super(props)
@@ -38,29 +38,36 @@ class Album extends Component{
             <React.Fragment >           
                 {this.state.canciones.length === 0 ?
                     <h2> CARGANDO...</h2>:
-                     <section>
-                        <h2>{this.state.albums.title}</h2>
-                        <h2>{this.state.artista.name}</h2>
-                        <p>Nombre genero:</p>
-                        {this.state.genres.map((genero,i) =>(
-                            <div key={genero + i}>
-                                <ul><li>{genero.name}</li></ul>
+
+                     <section class="detallesmargen">
+                        <article class="albumscontenedor">
+                            <img class="fotoalbum" src={this.state.albums.cover_big}></img>
+                            <div class="descrpcionalbum">
+                                <h1 class="tituloAlbum">{this.state.albums.title}</h1>
+                                <h2>{this.state.artista.name}</h2>
+                                <h3> Genero:</h3>
+                                {this.state.genres.map((genero,i) =>(
+                                    <div key={genero + i}>
+                                        <p>{genero.name}</p>
+                                    </div>
+                                ))}
+                                <h3> Fecha de lanzamiento:</h3>
+                                <p>{this.state.albums.release_date}</p>
+
+                                <h3>Listado de canciones:</h3>
+                                {this.state.canciones.map((cancion, i) => (
+                                <div key={cancion + i}>
+                                    <ul><li class="listaContenido" >{cancion.title}</li></ul>
+                                </div>
+                                ))}
+                            {/* <button type="submit">Agregar a favoritos</button> */}
+                            { <button class="botonFavs" onClick={()=>this.anadirFav(this.props.albums.id)}>añadir a Favoritos</button> }
+                        
                             </div>
-                        ))}
-                        <img src={this.state.albums.cover}></img>
-                        <h2>{this.state.albums.release_date}</h2>
-                        <p>Listado de canciones:</p>
-                        {this.state.canciones.map((cancion, i) => (
-                            <div key={cancion + i}>
-                                <ul ><li >{cancion.title}</li></ul>
-                            </div>
-                        ))}
-                        {/* <button type="submit">Agregar a favoritos</button> */}
-                        { <button onClick={()=>this.anadirFav(this.props.albums.id)}>añadir a Favoritos</button> }
-                       
+                        </article>
                     </section>
                 
-                        }
+                }
            </React.Fragment>
 
         )

@@ -17,13 +17,15 @@ class CardCancionHome extends Component{
     }
     render(){
         return(
-        <article>
-            <h1>{this.props.title}</h1>
-            <Link to={`/Cancion/${this.props.id}`}>detalle cancion</Link>
+
+        <section class="card">
+            <Link to={`/Cancion/${this.props.id}`}>
+                <h4>{this.props.title}</h4>
+            </Link>
             
         {this.state.boton !== false?
             <section>
-                <button onClick={()=>this.verMenos()}>Ver menos</button>
+                <button class="botonVermasMenosCancion" onClick={()=>this.verMenos()}>Ver menos</button>
                 <p>Descripcion:</p>
                 {
                     this.props.duration !== null ?
@@ -36,7 +38,7 @@ class CardCancionHome extends Component{
 
             </section>
             :
-            <button onClick= {()=> this.verMas()}> Ver mas</button>
+            <button class="botonVermasMenosCancion" onClick= {()=> this.verMas()}> Ver mas</button>
 
         }
     
@@ -44,7 +46,7 @@ class CardCancionHome extends Component{
 
     
           
-        </article>
+        </section>
         )
     }
 

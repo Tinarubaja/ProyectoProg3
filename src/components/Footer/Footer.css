@@ -1,0 +1,16 @@
+.contenedorfooter{
+      padding-top: 80px;
+      padding-bottom: 75px;
+}
+.integrantes{
+      display: flex;
+      flex-wrap:wrap;
+      align-items: center;
+      justify-content: center;
+      flex-direction:row;
+      padding-bottom: 0px;
+      padding-top: 30px;
+} 
+.integrantes h3{
+     margin:0px 20px;
+}

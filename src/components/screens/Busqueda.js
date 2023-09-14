@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 //import Formulario from './Formulario';
-import CardAlbum from "../Cards/CardAlbum";
+import CardAlbum from "../Cards/CardAlbum/CardAlbum";
 import CardCancionHome from '../Cards/CardCancionHome';
 
 
@@ -52,7 +52,7 @@ class Busqueda extends Component{
         return(   
             
             <div>  
-                <section class="albumsgeneral" id="album">
+                <section class="artistasgeneral" id="album">
                     <h2 class="titulosindex">Albums</h2>
                      <div class="albums">
                      {this.state.albums.map((album,idx) => <CardAlbum key={album + idx}title = {album.title} cover={album.cover} id={album.id}/>)}

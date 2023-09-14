@@ -11,7 +11,7 @@ import Footer from "./components/Footer/Footer";
 import Favoritos from "./components/screens/Favoritos/Favoritos";
 // import Favoritos from "./components/Favoritos";
 //import Cancion from "./components/Canciones/Cancion";
-import "./components/styles.css";
+import "./components/styles.css"
 
 
 

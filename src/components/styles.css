@@ -11,9 +11,9 @@
  input{
     color:black;
  }
-li{
+/*----li{
     list-style:none;
- }
+ }-----*/
 a{
      text-decoration: none;
  }
@@ -38,7 +38,7 @@ body{
     background-color: #F433AB;
 }
 
-  /*----------------FOOTER---------------*/
+  /*----------------FOOTER--
 footer{
     margin-top: 15%;
     background: linear-gradient(to bottom, #071E22, #f433aa81);
@@ -60,7 +60,7 @@ footer{
 } 
 .integrantes h3{
      margin:0px 20px;
-}
+}-------------*/
 
 
 /*--------------Barra de navegacion-----------*/
@@ -102,7 +102,7 @@ footer{
 
 /*-------------------------INDEX----------------------*/
 /*------------Titulo principal + foto ---------------*/
-
+/*-----
 .tituloprincipalyfoto{
     margin-top: 3%;
     padding: 150px;
@@ -118,9 +118,9 @@ footer{
 .music{
     color:#F433AB;
     font-style: italic;
-}
+}v-------*/
 
-/*----------------ARTISTAS----------*/
+/*----------------ARTISTAS
 .artistasgeneral{
     margin-top: 200px;
 }
@@ -130,15 +130,16 @@ footer{
     font-style: italic;
     font-size: 55px;
 
-}
-.artistas{    /* artistas y albums usan los mismos*/
+}----------*/
+/*---
+.artistas{    artistas y albums usan los mismos
     display:flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content:center;
     align-items: center;
 }
-/*---cards de artistas*/
+cards de artistas
   .card {
     transition: 0.3s;
     width: 18%;
@@ -156,7 +157,7 @@ footer{
       height: 36vh;
       border-radius: 5px;
   }
-
+*/
 
 /*------------------ALBUMS----------------*/
 .albumsgeneral{
@@ -257,11 +258,11 @@ footer{
 }*/
 
 
-/*------------DETAIL-ARTIST-----------*/
+/*------------DETAIL-ARTIST--------
   
-.detallesmargen{ /*margenes para todos los detalles*/
+.detallesmargen{ margenes para todos los detalles
     margin: 150px 120px 40px 120px;
-}
+}---*/
 .titulosdetalles{ /*titulos para todos los detalles*/
     color: white;
     font-style: italic;
@@ -296,7 +297,7 @@ footer{
 }
 
 
-/*------------DETAIL-ALBUM----------*/
+/*------------DETAIL-ALBUM-
 .albumscontenedor {
     padding: 3%;
     margin-top: 2%;
@@ -326,7 +327,7 @@ footer{
     margin-top: 2%;
 }
 
-
+---------*/
 /*------------DETAIL-TRACK----------*/
 .contenedorgeneralinfocancion{ 
     margin-top: 2%;

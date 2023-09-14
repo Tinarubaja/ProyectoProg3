@@ -1,10 +1,12 @@
 import React, {Component} from "react";
-import CardAlbum from "../../Cards/CardAlbum";
+
 import Footer from "../../Footer/Footer";
 import "./Home.css"
 
 import {Link} from 'react-router-dom';
 import CardCancionHome from "../../Cards/CardCancionHome";
+import CardAlbum from "../../Cards/CardAlbum/CardAlbum";
+
 class Home extends Component{
     constructor(){
         super();
@@ -74,38 +76,35 @@ componentDidUpdate(){
 //}
 
 render(){
-    console.log("Me monté");
-    console.log(this.state)
-    return(
-        <div>
-            <section class="tituloprincipalyfoto">
-            <div class="tituloprincipal">
-                <h1>Let's explore the world of <span class="music">Music!</span></h1>
-            </div>
-            </section>
-
-
-        
-                <section class="albumsgeneral" id="album">
-                    <Link to="/VerTodas"><h2 class="titulosindex">Albums</h2></Link>
-
-                     <div class="albums">
-                        {this.state.albums.map((album,idx) => <CardAlbum key={album + idx}title = {album.title} cover={album.cover} link={album.id} id ={album.id} duration={album.duration} position={album.position} record_type= {album.record_type}/>)}
-                     
-                    </div>               
-                </section>
-
-                <section class="artistasgeneral" id="artist">
-                    <h2 class="titulosindex">Canciones</h2>
-                    <div class="artistas">
-                    {this.state.canciones.map((cancion,idx) => <CardCancionHome key={cancion + idx}title = {cancion.title} link={cancion.id} id= {cancion.id} duration={cancion.duration} rank={cancion.rank} /> )}
+        console.log("Me monté");
+        console.log(this.state)
+        return(
+            <div>
+                <section class="tituloprincipalyfoto">
+                    <div class="tituloprincipal">
+                        <h1>Let's explore the world of <span class="music">Music!</span></h1>
                     </div>
                 </section>
+                    <section class="artistasgeneral" id="artist">
+                        <Link to="/VerTodas"><h2 class="titulosindex">Albums</h2></Link>
 
-        </div>
-       
-    )
-}
+                        <div class="artistas">
+                            {this.state.albums.map((album,idx) => <CardAlbum key={album + idx}title = {album.title} cover={album.cover} link={album.id} id ={album.id} duration={album.duration} position={album.position} record_type= {album.record_type}/>)}
+                        
+                        </div>               
+                    </section>
+
+                    <section class="artistasgeneral" id="artist">
+                        <h2 class="titulosindex">Canciones</h2>
+                        <div class="artistas">
+                            {this.state.canciones.map((cancion,idx) => <CardCancionHome key={cancion + idx}title = {cancion.title} link={cancion.id} id= {cancion.id} duration={cancion.duration} rank={cancion.rank} /> )}
+                        </div>
+                    </section>
+
+            </div>
+        
+        )
+    }
 }
 
 

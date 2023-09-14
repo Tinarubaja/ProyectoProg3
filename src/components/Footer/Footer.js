@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import "./Footer.css"
 class Footer extends Component{
     constructor(props){
         super(props)
@@ -11,20 +11,13 @@ class Footer extends Component{
     render(){
         return(
             <React.Fragment>
-                 <div class="contenedorfooter">
-            <div class="develop">
-                <i class="fa-solid fa-code"></i>
-                <h3> Developed by</h3>
+             <div class="contenedorfooter">
+                <div class="integrantes">
+                    <h3>Ailin Fernandez</h3>
+                    <h3>Martina Rubaja</h3>
+                    <h3>Renata Lamas</h3>
+                </div>
             </div>
-            <div class="integrantes">
-                <h3>Ailin Fernandez</h3>
-                <i class="fa-solid fa-minus"></i>
-                <h3>Martina Rubaja</h3>
-                <i class="fa-solid fa-minus"></i>
-                <h3>Renata Lamas</h3>
-            </div>
-        </div>
-
            </React.Fragment>
 
         )

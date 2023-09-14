@@ -1,0 +1,16 @@
+.tituloprincipalyfoto{
+    margin-top: 3%;
+    padding: 150px;
+    background-image: url("../SoundWave.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 100px;
+    
+}
+.tituloprincipal{
+    font-size: 40px;
+}
+.music{
+    color:#F433AB;
+    font-style: italic;
+}

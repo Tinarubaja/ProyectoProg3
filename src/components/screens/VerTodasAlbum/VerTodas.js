@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Footer from "../../Footer/Footer";
-import CardAlbum from '../../Cards/CardAlbum';
+import CardAlbum from "../../Cards/CardAlbum/CardAlbum";
 import Filtro from '../../Formulario/Filtro';
 import "./VerTodasAlbum.css"
 

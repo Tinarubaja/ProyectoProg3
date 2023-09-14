@@ -1,0 +1,50 @@
+.albumscontenedor {
+    padding: 1%;
+    margin-top: 2%;
+    box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.26);
+    border-radius: 1%;
+    display: flex;
+    align-items: stretch;
+    flex-wrap:nowrap;
+    flex-direction: row;
+    justify-content:space-around;
+}
+
+.fotoalbum{
+    border-radius: 2%;
+
+}
+.detallesmargen{ /*margenes para todos los detalles*/
+    margin: 150px 120px 40px 120px;
+
+}
+.descrpcionalbum{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.descrpcionalbum h3{
+    margin-top: 6%;
+}
+
+.tituloAlbum{
+    font-size: 35px;
+    margin-bottom: 6%;
+}
+
+.listaContenido{
+    margin-top: 5px;
+    list-style:none;
+}
+.botonFavs{
+    margin-top: 5%;
+    padding: 2%;
+    background-color: rgb(20, 181, 20);
+    border: none;
+    border-radius: 10px;
+    margin-left: 2%;
+    margin-bottom: 5%; 
+}
