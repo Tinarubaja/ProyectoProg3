@@ -1,35 +1,24 @@
 .favscontenedor{
     padding: 1%;
     margin-top: 2%;
+    margin-left: 4%;
+    margin-right: 4%;
     box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.26);
     border-radius: 1%;
     display: flex;
     align-items: stretch;
-    flex-wrap:nowrap;
-    flex-direction: row;
-    justify-content:space-around;
-
-}
-
-
-.tituloyfiltro{
-    text-align: center;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+    flex-wrap:wrap;
     flex-direction: column;
-
+    justify-content:space-around;
 }
 
 .titulofavs{
     font-size: 35px;
-    margin-bottom: 6%;
     text-align: center;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-direction: column;
-
 }
-
+h3{
+    text-align: center;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
 

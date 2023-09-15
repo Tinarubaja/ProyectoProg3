@@ -25,7 +25,7 @@ class VerTodasAlbum extends Component{
                  }
                     
             ))
-            .catch(error => console.log('El error es' + error))
+            .catch(error => console.log(error))
             console.log(this.state.albums)
     }
     //preventDefault(event){
@@ -52,19 +52,19 @@ class VerTodasAlbum extends Component{
         return(
             <section>
                 <section className='tituloyfiltro'>
-                <h2 class='titulosindex'>Albums</h2>
-                <Filtro classname='filtro' filtrar={this.FiltrarFormulario}></Filtro>
+                    <h2 class='titulosindex'>Albums</h2>
+                    <Filtro classname='filtro' filtrar={this.FiltrarFormulario}></Filtro>
                 </section>
                 
-
-                <section class="artistas" id="album">
-
-                        {(this.state.albumsFiltrados.length === 0? this.state.albums : this.state.albumsFiltrados).map(function(unAlbum){
-                            return <CardAlbum key={unAlbum.id} title = {unAlbum.title} id={unAlbum.id} cover_big = {unAlbum.cover_big} duration={unAlbum.duration} position={unAlbum.position} record_type= {unAlbum.record_type}/>
-                            })
-                        }
-                 </section>  
-
+                {this.state.albums.length === 0 ?
+                    <h2 className='cargando'> CARGANDO...</h2>:
+                    <section class="artistas" id="album">
+                            {(this.state.albumsFiltrados.length === 0? this.state.albums : this.state.albumsFiltrados).map(function(unAlbum){
+                                return <CardAlbum key={unAlbum.id} title = {unAlbum.title} id={unAlbum.id} cover_big = {unAlbum.cover_big} duration={unAlbum.duration} position={unAlbum.position} record_type= {unAlbum.record_type}/>
+                                })
+                            }
+                    </section>  
+                }
 
             </section>
  

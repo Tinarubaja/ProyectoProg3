@@ -25,7 +25,7 @@ class Songs extends Component{
                  }
                     
             ))
-            .catch(error => console.log('El error es' + error))
+            .catch(error => console.log(error))
             console.log(this.state.canciones)
     }
     
@@ -48,14 +48,22 @@ class Songs extends Component{
         console.log(this.state)
         
         return(
-            <section class="artistas" id="album">
-                <Filtro filtrar={this.FiltrarFormulario}></Filtro>
+            <section>
+                <section className='tituloyfiltro'>
                     <h2 className='titulosindex'>Canciones</h2>
+                    <Filtro filtrar={this.FiltrarFormulario}></Filtro>
+                </section>
+                {this.state.canciones.length === 0 ?
+                    <h2 className='cargando'> CARGANDO...</h2>:
+                    
+                    <section class="artistas" id="album">
                         {(this.state.cancionesFiltradas.length === 0? this.state.canciones : this.state.cancionesFiltradas).map(function(unaCancion){
                             return <CardCancionHome title = {unaCancion.title}  id= {unaCancion.id} duration={unaCancion.duration} rank={unaCancion.rank}/>
                             })
                         }
-            </section>   
+                    </section> 
+                }
+            </section>  
         )
     }
     

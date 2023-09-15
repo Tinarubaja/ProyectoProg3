@@ -79,7 +79,7 @@ class Album extends Component{
         return(
             <React.Fragment >           
                 {this.state.canciones.length === 0 ?
-                    <h2> CARGANDO...</h2>:
+                    <h2 className='cargando'> CARGANDO...</h2>:
 
                      <section class="detallesmargen">
                         <article class="albumscontenedor">
@@ -103,7 +103,7 @@ class Album extends Component{
                                 </div>
                                 ))}
                             {/* <button type="submit">Agregar a favoritos</button> */}
-                            { <button class="botonFavs" onClick={()=>this.agregarAFavoritosAlbum(this.state.id)}>{this.state.textoBoton}</button> }
+                            { <button class="botonFavsAlbums" onClick={()=>this.agregarAFavoritosAlbum(this.state.id)}>{this.state.textoBoton}</button> }
                         
                             </div>
                         </article>

@@ -35,6 +35,7 @@ function App() {
         <Route path ="/Busqueda/:q" component={Busqueda}/>
         <Route component={NoExiste}></Route>
       </Switch>
+      
         <Footer></Footer>
     </section>
   );

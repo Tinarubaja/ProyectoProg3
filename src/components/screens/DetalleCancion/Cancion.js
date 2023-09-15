@@ -86,7 +86,7 @@ class Cancion extends Component{
         return(
             <React.Fragment >           
                 {this.state.canciones.length === 0 ?
-                    <h2> CARGANDO...</h2>:
+                    <h2 className='cargando'> CARGANDO...</h2>:
                     <section class="detallesmargen">
                         <section class="cancioncontenedor">
                             <div class="fotoCancion"><img src={this.state.album.cover_medium}></img></div>
@@ -99,7 +99,7 @@ class Cancion extends Component{
                                 </audio>
 
                                 
-                                <button  class="botonFavs" onClick={()=>this.agregarAFavoritosCancion(this.state.id)}  type="button">{ this.state.textoBoton }</button>
+                                <button  class="botonFavsCancion" onClick={()=>this.agregarAFavoritosCancion(this.state.id)}  type="button">{ this.state.textoBoton }</button>
 
                             </div>
                         </section>

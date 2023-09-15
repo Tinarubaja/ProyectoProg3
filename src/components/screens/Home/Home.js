@@ -51,7 +51,7 @@ render(){
                 </section>
                     <section class="artistasgeneral" id="artist">
                         <Link to="/VerTodas"><h2 class="titulosindex">Albums</h2></Link>
-                        <Link to="/VerTodas"><h2 class="">Ver todos</h2></Link>
+                        <Link to="/VerTodas"><h2>Ver todos</h2></Link>
                         
                         <div class="artistas">
                             {this.state.albums.map((album,idx) => <CardAlbum key={album + idx}title = {album.title} cover_big={album.cover_big} link={album.id} id ={album.id} duration={album.duration} position={album.position} record_type= {album.record_type}/>)}
@@ -59,7 +59,8 @@ render(){
                     </section>
 
                     <section class="artistasgeneral" id="artist">
-                        <h2 class="titulosindex">Canciones</h2>
+                    <Link to="/Songs"><h2 class="titulosindex">Ver Todas</h2></Link>
+                    <Link to="/Songs"><h2>Canciones</h2></Link>
                         <div class="artistas">
                             {this.state.canciones.map((cancion,idx) => <CardCancionHome key={cancion + idx}title = {cancion.title} link={cancion.id} id= {cancion.id} duration={cancion.duration} rank={cancion.rank} /> )}
                         </div>

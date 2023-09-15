@@ -73,7 +73,7 @@ class CardAlbum extends Component{
                         <img src={this.props.cover_big}/>
                         <h4>{this.props.title}</h4>
                     </Link>
-                    <button  class="botonVermasMenosCancion" onClick={()=>this.agregarAFavoritosAlbums(this.props.id)}  type="button">{ this.state.textoBoton }</button>
+                    <button  class="botonFavsAlbum" onClick={()=>this.agregarAFavoritosAlbums(this.props.id)}  type="button">{ this.state.textoBoton }</button>
 
                     {this.state.boton !== false?
                         <div class="container">

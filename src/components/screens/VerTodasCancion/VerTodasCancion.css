@@ -1,0 +1,12 @@
+.tituloyfiltro{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+}
+.cargando{
+    text-align: center;
+    margin-top: 3%;
+}

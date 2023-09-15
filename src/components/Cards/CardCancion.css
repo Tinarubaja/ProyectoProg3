@@ -34,11 +34,20 @@
       border-radius: 5px;
   }
 .botonVermasMenosCancion{
-    background-color: #26d420;
+    background-color:  #ffaa00;
     border: none;
     border-radius: 5px;
     padding: 2%;
     margin-top: 5%;
     margin-left: 2%;
     margin-bottom: 5%;
+}
+.botonFavsCancion{
+  background-color:  #ff009d;
+  border: none;
+  border-radius: 5px;
+  padding: 2%;
+  margin-top: 5%;
+  margin-left: 2%;
+  margin-bottom: 5%;
 }

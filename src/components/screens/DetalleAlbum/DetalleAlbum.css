@@ -16,7 +16,6 @@
 }
 .detallesmargen{ /*margenes para todos los detalles*/
     margin: 150px 120px 40px 120px;
-
 }
 .descrpcionalbum{
     text-align: center;
@@ -39,12 +38,16 @@
     margin-top: 5px;
     list-style:none;
 }
-.botonFavs{
+.botonFavsAlbums{
     margin-top: 5%;
     padding: 2%;
-    background-color: rgb(20, 181, 20);
+    background-color: #2259db;
     border: none;
     border-radius: 10px;
     margin-left: 2%;
     margin-bottom: 5%; 
+}
+.cargando{
+    text-align: center;
+    margin-top: 3%;
 }

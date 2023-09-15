@@ -32,23 +32,38 @@ class CardCancionHome extends Component{
         }
 
     }
-    agregarYSacarDeFavs (id){
-        let arrayFavoritos = [];
-        let recuperoStorage = localStorage.getItem('CancionFav')
-        if (recuperoStorage !== null) {
-            arrayFavoritos = arrayFavoritos.filter(unId => unId != id);
+    agregarAFavoritos(id){
+        // Agregar un id dentro de array y colocar ese array en localStorage
+        let arrayFavoritos = []
+        let recuperoStorage = localStorage.getItem('favoritos');
+
+        if(recuperoStorage !== null){
+           arrayFavoritos = JSON.parse(recuperoStorage);   
+        }
+
+        if(arrayFavoritos.includes(id)){
+            //Si el id está en el array queremos sacar el id.
+            arrayFavoritos = arrayFavoritos.filter( unId => unId !== id);
+
             this.setState({
-                textoBoton: "Agregar a favoritos"
+                textoBoton: "Agregar a Favoritos"
             })
-        }else{
+
+
+        } else {
             arrayFavoritos.push(id);
             this.setState({
                 textoBoton: "Quitar de favoritos"
             })
         }
+
+        //Subirlo a local storage stringifeado
         let arrayFavoritosAString = JSON.stringify(arrayFavoritos)
-        localStorage.setItem('CancionFav' , arrayFavoritosAString)
+        localStorage.setItem('favoritos', arrayFavoritosAString)
+
+        console.log(localStorage)
     }
+
     render(){
         return(
 
@@ -76,8 +91,7 @@ class CardCancionHome extends Component{
             <button class="botonVermasMenosCancion" onClick= {()=> this.verMas()}> Ver mas</button>
 
         }
-        <button class="botonVermasMenosCancion" onClick={()=> this.agregarYSacarDeFavs(this.props.id)} type="button">{this.state.textoBoton}</button>
-    
+        <button  class="botonFavsCancion" onClick={()=>this.agregarAFavoritos(this.props.id)}  type="button">{ this.state.textoBoton }</button>    
 
 
     

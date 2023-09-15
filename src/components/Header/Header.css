@@ -1,0 +1,34 @@
+.logo{
+    margin-left: 5%;
+}
+.logotexto{
+    text-shadow: 2px 2px 2px #efeff1;
+    color: #071E22;
+}
+.logo img{
+    width: 60px;
+    height: 60px;
+}
+.navbar{
+    padding: 20px ;
+    margin: 8px 0px;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.list{
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+#toggler, .navbar label{
+    display: none;
+}
+.busqueda{
+    border-radius: 50px;
+    border-style: none;
+    outline: none;
+    padding: 6px 6px;
+    color: #071E22;
+}

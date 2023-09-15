@@ -12,6 +12,8 @@
 
 .fotoCancion{
     border-radius: 2%;
+    margin-top: 5%;
+
 
 }
 .detallesmargen{ /*margenes para todos los detalles*/
@@ -35,10 +37,10 @@
     margin-bottom: 6%;
 }
 
-.botonFavs{
+.botonFavsCancion{
     margin-top: 5%;
     padding: 2%;
-    background-color: rgb(20, 181, 20);
+    background-color:#ff009d;
     border: none;
     border-radius: 10px;
     margin-left: 2%;

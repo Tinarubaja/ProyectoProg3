@@ -43,6 +43,16 @@
     margin-bottom: 5%;
 
 }
+.botonFavsAlbum{
+  background-color: #2259db;
+  border: none;
+  border-radius: 5px;
+  padding: 2%;
+  margin-top: 5%;
+  margin-left: 2%;
+  margin-bottom: 5%;
+
+}
 .albums{
   display:flex;
   flex-wrap: wrap;
