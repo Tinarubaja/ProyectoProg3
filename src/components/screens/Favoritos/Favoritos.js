@@ -58,13 +58,21 @@ class Favoritos extends Component{
         render(){
              return(
                 <React.Fragment>
-                    <h2 >Mis favs</h2>
-                      <section >
-                       <h2>canciones</h2> 
-                      {this.state.favoritos.map((cancion,idx) => <CardCancionHome key={cancion + idx}title = {cancion.title} link={cancion.id} id= {cancion.id} duration={cancion.duration} rank={cancion.rank} /> )}
-                      <h2>Albums</h2> 
-                      {this.state.favoritosAlbums.map((album,idx) => <CardAlbum key={album + idx}title = {album.title} cover_big={album.cover_big} link={album.id} id ={album.id} duration={album.duration} position={album.position} record_type= {album.record_type}/>)}
-                     </section>
+                    <section><h2 className='titulosindex' >Mis favs</h2>
+                    </section>
+                     <section classname='favscontenedor' >
+                       <h2 className='titulofavs'>Canciones</h2> 
+                        <section classname='artistas'>
+                            {this.state.favoritos.map((cancion,idx) => <CardCancionHome key={cancion + idx}title = {cancion.title} link={cancion.id} id= {cancion.id} duration={cancion.duration} rank={cancion.rank} /> )}
+                         <h2 className='titulofavs'>Albums</h2> 
+                         <section className='artistas'>
+                            {this.state.favoritosAlbums.map((album,idx) => <CardAlbum key={album + idx}title = {album.title} cover_big={album.cover_big} link={album.id} id ={album.id} duration={album.duration} position={album.position} record_type= {album.record_type}/>)}
+                         </section>
+                         
+                     </section> 
+                    </section>
+                    
+
                 </React.Fragment>
             )
          }
