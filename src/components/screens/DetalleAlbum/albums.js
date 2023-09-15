@@ -7,14 +7,29 @@ class Album extends Component{
            id: Number(props.match.params.id),
            canciones: [],
            artista:[],
-           album:[],
-           genres:[]
+           albums:[],
+           genres:[],
+           textoBoton: "Agregar a favoritos",
+
         }
         console.log(this.state.id)
     }
 
     componentDidMount(){
-        // let canciones1 = []
+        let arrayFavoritosAlbums = []
+        let recuperoStorageAlbums = localStorage.getItem('favoritos');
+        
+        if(recuperoStorageAlbums !== null){
+            arrayFavoritosAlbums = JSON.parse(recuperoStorageAlbums);
+
+           if(arrayFavoritosAlbums.includes(this.state.id)){
+             this.setState({
+                 textoBoton: 'Quitar de favoritos'
+             })
+           }    
+        }
+
+       
         let url = `https://thingproxy.freeboard.io/fetch/https://api.deezer.com/album/${this.state.id}`
         fetch(url)
             .then(response => response.json())
@@ -27,11 +42,45 @@ class Album extends Component{
                  }
                     
             ))
-            .catch(error => console.log('El error es' + error))
-            console.log(this.state.albums)
+            .catch(error => console.log( error))
+    }
+    agregarAFavoritosAlbum(id){
+        
+        // Agregar un id dentro de array y colocar ese array en localStorage
+        let arrayFavoritosAlbums = []
+        let recuperoStorageAlbums = localStorage.getItem('favoritosAlbums');
+        
+        if(recuperoStorageAlbums !== null){
+            arrayFavoritosAlbums = JSON.parse(recuperoStorageAlbums);   
+        }
+           
+        if(arrayFavoritosAlbums.includes(id)){
+            //Si el id está en el array queremos sacar el id.
+            arrayFavoritosAlbums = arrayFavoritosAlbums.filter( unId => unId !== id);
+
+            this.setState({
+                textoBoton: "Agregar a Favoritos"
+            })
+        } else {
+            arrayFavoritosAlbums.push(id);
+            this.setState({
+                textoBoton: "Quitar de favoritos"
+            })
+        }
+
+        //Subirlo a local storage stringifeado
+        let arrayFavoritosAlbumsAString = JSON.stringify(arrayFavoritosAlbums)
+        localStorage.setItem('favoritosAlbums', arrayFavoritosAlbumsAString)
+
+        console.log(localStorage)
     }
 
     
+
+
+
+
+
 
     render(){
         return(
@@ -61,7 +110,7 @@ class Album extends Component{
                                 </div>
                                 ))}
                             {/* <button type="submit">Agregar a favoritos</button> */}
-                            { <button class="botonFavs" onClick={()=>this.anadirFav(this.props.albums.id)}>añadir a Favoritos</button> }
+                            { <button class="botonFavs" onClick={()=>this.agregarAFavoritosAlbum(this.state.id)}>{this.state.textoBoton}</button> }
                         
                             </div>
                         </article>
@@ -74,21 +123,5 @@ class Album extends Component{
     }
 
 }
-
-
-// function Artist(){
-//     return(
-//         <div>
-//             <h2>hola soy el componente</h2>
-//         </div>
-//     )
-// }
-
-
-
-
-
-
-
 
 export default Album;

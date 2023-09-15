@@ -6,8 +6,58 @@ class CardCancionHome extends Component{
     constructor(props){
         super(props);
         this.state={
-            boton:false
+            boton:false,
+            textoBoton: "Agregar a favoritos",
+            favoritos: []
         }
+    }
+
+    componentDidMount(){
+        let arrayFavoritos = [];
+        let recuperoStorage = localStorage.getItem('favoritos');
+        
+        if(recuperoStorage !== null){
+            arrayFavoritos = JSON.parse(recuperoStorage);
+
+           if(arrayFavoritos.includes(this.props.id)){
+             this.setState({
+                 textoBoton: 'Quitar de favoritos'
+             })
+           }    
+        }
+
+    }
+
+    agregarAFavoritos(id){
+        // Agregar un id dentro de array y colocar ese array en localStorage
+        let arrayFavoritos = []
+        let recuperoStorage = localStorage.getItem('favoritos');
+        
+        if(recuperoStorage !== null){
+           arrayFavoritos = JSON.parse(recuperoStorage);   
+        }
+           
+        if(arrayFavoritos.includes(id)){
+            //Si el id está en el array queremos sacar el id.
+            arrayFavoritos = arrayFavoritos.filter( unId => unId !== id);
+
+            this.setState({
+                textoBoton: "Agregar a Favoritos"
+            })
+
+
+        } else {
+            arrayFavoritos.push(id);
+            this.setState({
+                textoBoton: "Quitar de favoritos"
+            })
+        }
+
+        //Subirlo a local storage stringifeado
+        let arrayFavoritosAString = JSON.stringify(arrayFavoritos)
+        localStorage.setItem('favoritos', arrayFavoritosAString)
+
+        console.log(localStorage)
     }
     verMas(){
         this.setState({boton:true})
@@ -23,7 +73,7 @@ class CardCancionHome extends Component{
             <Link to={`/Cancion/${this.props.id}`}>
                 <h4>{this.props.title}</h4>
             </Link>
-            
+            <button  class="botonVermasMenosCancion" onClick={()=>this.agregarAFavoritos(this.props.id)}  type="button">{ this.state.textoBoton }</button>
             
         {this.state.boton !== false?
             <section>

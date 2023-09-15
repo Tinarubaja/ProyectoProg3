@@ -9,13 +9,32 @@ class Cancion extends Component{
            id: Number(props.match.params.id),
            canciones: [],
            artista:[],
-           album:[]
+           album:[],
+           textoBoton: "Agregar a favoritos",
         }
         console.log(this.state.id)
     }
-
+//-vamos a conseguir el id
+//-hacer un coso para guardarlo
+//-lo metemos en el local Storage
+//-preguntamos si esta o No
+//-lo llamamos favoritos albunes
+//-hacemos el boton
     componentDidMount(){
-        // let canciones1 = []
+        let arrayFavoritosCanciones = []
+        let recuperoStorageCanciones = localStorage.getItem('favoritos');
+        
+        if(recuperoStorageCanciones !== null){
+            arrayFavoritosCanciones = JSON.parse(recuperoStorageCanciones);
+
+           if(arrayFavoritosCanciones.includes(this.state.id)){
+             this.setState({
+                 textoBoton: 'Quitar de favoritos'
+             })
+           }    
+        }
+
+
         let url = `https://thingproxy.freeboard.io/fetch/https://api.deezer.com/track/${this.state.id}`
         fetch(url)
             .then(response => response.json())
@@ -29,6 +48,37 @@ class Cancion extends Component{
             ))
             .catch(error => console.log('El error es' + error))
             console.log(this.state.canciones)
+
+    }
+    agregarAFavoritosCancion(id){
+        
+        // Agregar un id dentro de array y colocar ese array en localStorage
+        let arrayFavoritosCanciones = []
+        let recuperoStorageCanciones = localStorage.getItem('favoritos');
+        
+        if(recuperoStorageCanciones !== null){
+            arrayFavoritosCanciones = JSON.parse(recuperoStorageCanciones);   
+        }
+           
+        if(arrayFavoritosCanciones.includes(id)){
+            //Si el id está en el array queremos sacar el id.
+            arrayFavoritosCanciones = arrayFavoritosCanciones.filter( unId => unId !== id);
+
+            this.setState({
+                textoBoton: "Agregar a Favoritos"
+            })
+        } else {
+            arrayFavoritosCanciones.push(id);
+            this.setState({
+                textoBoton: "Quitar de favoritos"
+            })
+        }
+
+        //Subirlo a local storage stringifeado
+        let arrayFavoritosCancionAString = JSON.stringify(arrayFavoritosCanciones)
+        localStorage.setItem('favoritos', arrayFavoritosCancionAString)
+
+        console.log(localStorage)
     }
     
 
@@ -48,7 +98,9 @@ class Cancion extends Component{
                                     <source src={this.state.canciones.preview}></source>
                                 </audio>
 
-                                <button  class="botonFavs" type='submit'>Agregar a favoritos</button>
+                                
+                                <button  class="botonFavs" onClick={()=>this.agregarAFavoritosCancion(this.state.id)}  type="button">{ this.state.textoBoton }</button>
+
                             </div>
                         </section>
                     </section>
@@ -59,21 +111,6 @@ class Cancion extends Component{
     }
 
 }
-
-
-// function Artist(){
-//     return(
-//         <div>
-//             <h2>hola soy el componente</h2>
-//         </div>
-//     )
-// }
-
-
-
-
-
-
 
 
 export default Cancion;
