@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import "./CardCancion.css"
-import Album from './CardAlbum/CardAlbum';
 class CardCancionHome extends Component{
     constructor(props){
         super(props);
@@ -10,22 +9,6 @@ class CardCancionHome extends Component{
             textoBoton: "Agregar a favoritos",
             favoritos: []
         }
-    }
-
-    componentDidMount(){
-        let arrayFavoritos = [];
-        let recuperoStorage = localStorage.getItem('favoritos');
-        
-        if(recuperoStorage !== null){
-            arrayFavoritos = JSON.parse(recuperoStorage);
-
-           if(arrayFavoritos.includes(this.props.id)){
-             this.setState({
-                 textoBoton: 'Quitar de favoritos'
-             })
-           }    
-        }
-
     }
 
     agregarAFavoritos(id){
@@ -59,6 +42,7 @@ class CardCancionHome extends Component{
 
         console.log(localStorage)
     }
+
     verMas(){
         this.setState({boton:true})
 
@@ -66,6 +50,22 @@ class CardCancionHome extends Component{
     verMenos(){
         this.setState({boton:false})
     }
+
+    componentDidMount(){
+        let arrayFavoritos = [];
+        let recuperoStorage = localStorage.getItem('favoritos')
+
+        if(recuperoStorage !== null){
+            arrayFavoritos = JSON.parse(recuperoStorage) 
+            if (arrayFavoritos.includes(this.props.id)){
+                this.setState({
+                    textoBoton: "Quitar de favorritos"
+                })
+            }
+        }
+
+    }
+
     render(){
         return(
 
@@ -92,12 +92,7 @@ class CardCancionHome extends Component{
             :
             <button class="botonVermasMenosCancion" onClick= {()=> this.verMas()}> Ver mas</button>
 
-        }
-    
-
-
-    
-          
+        }       
         </section>
         )
     }

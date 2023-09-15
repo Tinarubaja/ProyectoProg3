@@ -50,14 +50,24 @@ class VerTodasAlbum extends Component{
         console.log(this.state)
         
         return(
-            <section class="albumsgeneral" id="album">
-                <Filtro filtrar={this.FiltrarFormulario}></Filtro>
-                    <h2>Albums</h2>
+            <section>
+                <section className='tituloyfiltro'>
+                <h2 class='titulosindex'>Albums</h2>
+                <Filtro classname='filtro' filtrar={this.FiltrarFormulario}></Filtro>
+                </section>
+                
+
+                <section class="artistas" id="album">
+
                         {(this.state.albumsFiltrados.length === 0? this.state.albums : this.state.albumsFiltrados).map(function(unAlbum){
                             return <CardAlbum key={unAlbum.id} title = {unAlbum.title} id={unAlbum.id} cover_big = {unAlbum.cover_big} duration={unAlbum.duration} position={unAlbum.position} record_type= {unAlbum.record_type}/>
                             })
                         }
-            </section>   
+                 </section>  
+
+
+            </section>
+ 
         )
     }
     

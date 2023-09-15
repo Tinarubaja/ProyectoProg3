@@ -17,7 +17,7 @@ class Album extends Component{
 
     componentDidMount(){
         let arrayFavoritosAlbums = []
-        let recuperoStorageAlbums = localStorage.getItem('favoritos');
+        let recuperoStorageAlbums = localStorage.getItem('favoritosAlbums');
         
         if(recuperoStorageAlbums !== null){
             arrayFavoritosAlbums = JSON.parse(recuperoStorageAlbums);
@@ -74,13 +74,6 @@ class Album extends Component{
 
         console.log(localStorage)
     }
-
-    
-
-
-
-
-
 
     render(){
         return(

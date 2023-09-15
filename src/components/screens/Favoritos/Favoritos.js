@@ -12,6 +12,7 @@ class Favoritos extends Component{
              favoritosAlbums:[]
         }
     }
+    
     componentDidMount(){
         //--------------------------Canciones---------------------------
         let arrayFavoritos=[]

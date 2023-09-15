@@ -28,9 +28,7 @@ class Songs extends Component{
             .catch(error => console.log('El error es' + error))
             console.log(this.state.canciones)
     }
-    //preventDefault(event){
-        //event.preventDefault()
-    //}
+    
     FiltrarFormulario= (textoAFiltrar)=>{console.log(textoAFiltrar)
         let formularioFiltrado = this.state.canciones.filter(function(unaCancion){
             return unaCancion.title.toLowerCase().includes(textoAFiltrar.toLowerCase())
@@ -50,9 +48,9 @@ class Songs extends Component{
         console.log(this.state)
         
         return(
-            <section class="albumsgeneral" id="album">
+            <section class="artistas" id="album">
                 <Filtro filtrar={this.FiltrarFormulario}></Filtro>
-                    <h2>Canciones</h2>
+                    <h2 className='titulosindex'>Canciones</h2>
                         {(this.state.cancionesFiltradas.length === 0? this.state.canciones : this.state.cancionesFiltradas).map(function(unaCancion){
                             return <CardCancionHome title = {unaCancion.title}  id= {unaCancion.id} duration={unaCancion.duration} rank={unaCancion.rank}/>
                             })
