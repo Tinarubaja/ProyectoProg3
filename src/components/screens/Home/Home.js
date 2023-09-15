@@ -59,8 +59,8 @@ render(){
                     </section>
 
                     <section class="artistasgeneral" id="artist">
-                    <Link to="/Songs"><h2 class="titulosindex">Ver Todas</h2></Link>
-                    <Link to="/Songs"><h2>Canciones</h2></Link>
+                    <Link to="/Songs"><h2 class="titulosindex">Canciones</h2></Link>
+                    <Link to="/Songs"><h2>Ver todas</h2></Link>
                         <div class="artistas">
                             {this.state.canciones.map((cancion,idx) => <CardCancionHome key={cancion + idx}title = {cancion.title} link={cancion.id} id= {cancion.id} duration={cancion.duration} rank={cancion.rank} /> )}
                         </div>

@@ -54,15 +54,21 @@ class Busqueda extends Component{
             <div>  
                 <section class="artistasgeneral" id="album">
                     <h2 class="titulosindex">Albums</h2>
+                    {this.state.albums.length === 0 ?
+                        <h2>Cargando Albums...</h2>:
                      <div class="artistas">
                          {this.state.albums.map((album,idx) => <CardAlbum key={album + idx}title = {album.title} cover_big={album.cover_big} link={album.id} id ={album.id}  record_type= {album.record_type}/>)}
                      </div>
+                    }
                 </section>
                 <section class="artistasgeneral" id="artist">
                         <h2 class="titulosindex">Canciones</h2>
-                        <div class="artistas">
-                            {this.state.canciones.map((cancion,idx) => <CardCancionHome key={cancion + idx}title = {cancion.title} id={cancion.id} duration={cancion.duration} rank={cancion.rank} />)}
-                        </div>
+                        {this.state.canciones.length === 0 ?
+                            <h2>Cargando Canciones...</h2>:
+                            <div class="artistas">
+                                {this.state.canciones.map((cancion,idx) => <CardCancionHome key={cancion + idx}title = {cancion.title} id={cancion.id} duration={cancion.duration} rank={cancion.rank} />)}
+                            </div>
+                         }
                 </section>
             </div>
         )
