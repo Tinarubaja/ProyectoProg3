@@ -85,7 +85,6 @@ class CardCancionHome extends Component{
                     <>
                         <p>Duracion: {this.props.duration}</p>
                         <p>Ranking: {this.props.rank}</p>
-                        <p>Artista:{this.props.name}</p>
                     </> :
                         <p>Explicit lyrics: {this.props.explicit_lyrics}</p>
                             }
