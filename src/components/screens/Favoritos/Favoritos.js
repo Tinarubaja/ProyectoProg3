@@ -33,7 +33,6 @@ class Favoritos extends Component{
                         .then(arrayFavoritos => {
                             favoritoslista.push(arrayFavoritos)
                             this.setState({favoritos:favoritoslista})
-                            console.log(this.state.favoritos)
                         })
                         .catch(error => console.log( error))
                 });
@@ -58,7 +57,6 @@ class Favoritos extends Component{
                         .then(arrayFavoritosAlbums => {
                             favoritoslistaAlbums.push(arrayFavoritosAlbums)
                             this.setState({favoritosAlbums:favoritoslistaAlbums})
-                            console.log(this.state.favoritosAlbums)
                         })
                         .catch(error => console.log( error))
                 });
