@@ -66,7 +66,7 @@ class Busqueda extends Component{
                         {this.state.canciones.length === 0 ?
                             <h2>Cargando Canciones...</h2>:
                             <div class="artistas">
-                                {this.state.canciones.map((cancion,idx) => <CardCancionHome key={cancion + idx}title = {cancion.title} id={cancion.id} duration={cancion.duration} rank={cancion.rank} />)}
+                                {this.state.canciones.map((cancion,idx) => <CardCancionHome key={cancion + idx}title = {cancion.title} id={cancion.id} duration={cancion.duration} rank={cancion.rank} picture_big={cancion.artist.picture_big}/>)}
                             </div>
                          }
                 </section>

@@ -65,13 +65,16 @@ class CardCancionHome extends Component{
     }
 
     render(){
-        return(
+        console.log(this.props.name)
 
+        return(
+           
         <section class="card">
             <Link to={`/Cancion/${this.props.id}`}>
+                <img src={this.props.picture_big}></img>
                 <h4>{this.props.title}</h4>
             </Link>
-            
+           
             
         {this.state.boton !== false?
             <section>
@@ -82,6 +85,7 @@ class CardCancionHome extends Component{
                     <>
                         <p>Duracion: {this.props.duration}</p>
                         <p>Ranking: {this.props.rank}</p>
+                        <p>Artista:{this.props.name}</p>
                     </> :
                         <p>Explicit lyrics: {this.props.explicit_lyrics}</p>
                             }

@@ -58,7 +58,7 @@ class Songs extends Component{
                     
                     <section class="artistas" id="album">
                         {(this.state.cancionesFiltradas.length === 0? this.state.canciones : this.state.cancionesFiltradas).map(function(unaCancion){
-                            return <CardCancionHome title = {unaCancion.title}  id= {unaCancion.id} duration={unaCancion.duration} rank={unaCancion.rank}/>
+                            return <CardCancionHome title = {unaCancion.title}  id= {unaCancion.id} duration={unaCancion.duration} rank={unaCancion.rank} picture_big={unaCancion.artist.picture_big}/>
                             })
                         }
                     </section> 

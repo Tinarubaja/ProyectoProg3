@@ -94,7 +94,8 @@ class Favoritos extends Component{
                                 <h3> Aun no tienes canciones favoritas</h3>:
                                 
                                 <section className='artistas'>
-                                        {this.state.favoritos.map((cancion,idx) => <CardCancionHome key={cancion + idx}title = {cancion.title} link={cancion.id} id= {cancion.id} duration={cancion.duration} rank={cancion.rank} /> )}
+                                        {this.state.favoritos.map((cancion,idx) => <CardCancionHome key={cancion + idx}title = {cancion.title} link={cancion.id} 
+                                        id= {cancion.id} duration={cancion.duration} rank={cancion.rank} picture_big={cancion.artist.picture_big}/> )}
                                 </section>
                             }
 
